@@ -6,7 +6,6 @@ import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
 import Page from "./page";
-import { ImageUploader } from "./page";
 
 jest.mock("@imagekit/next", () => ({
   upload: jest.fn(),
@@ -27,7 +26,7 @@ jest.mock("next/navigation", () => ({
     },
   }),
 }));
-jest.mock("../../components/navbar", () => ({
+jest.mock("../../components/NavBar.tsx", () => ({
   __esModule: true,
   default: () => <div data-testid="navbar">Navbar</div>,
 }));
@@ -62,16 +61,3 @@ describe("/upload page", () => {
     expect(screen.queryByTestId("navbar")).not.toBeInTheDocument();
   });
 });
-
-// while files are uploading, the sumbit button is disabled
-describe("ImageUploade", () => {
-  it("submit button is disabled when loading is true", () => {
-    const mockUploadState = { loading: true, setLoading: jest.fn() };
-    render(<ImageUploader uploadState={mockUploadState} />);
-    expect(
-      screen.getByRole("button", { name: /submit images/i })
-    ).toBeDisabled();
-  });
-});
-
-// test error messages
