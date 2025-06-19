@@ -19,7 +19,7 @@ interface UploadResult {
 interface FileUploadAntD extends File {
   uid: string;
 }
-
+// Message for after sucessful submission
 function ThankYouMessage() {
   return (
     <div className="flex flex-col justify-center items-center p-10 text-center">

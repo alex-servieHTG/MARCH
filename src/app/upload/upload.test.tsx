@@ -1,3 +1,7 @@
+// Tests all the parts of the upload component
+// 1. Test if no files are submitted
+// 2. Test submit button while files are uploading
+
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
@@ -28,6 +32,7 @@ jest.mock("../../components/navbar", () => ({
   default: () => <div data-testid="navbar">Navbar</div>,
 }));
 
+// This is where people will upload all the pictures of their submission
 describe("/upload page", () => {
   beforeEach(() => {
     jest.clearAllMocks();
@@ -40,6 +45,7 @@ describe("/upload page", () => {
     ).toBeInTheDocument();
   });
 
+  // if there are no files uploaded, there will be an error when sumbitting
   it("shows error if submitting with no files", async () => {
     render(<Page />);
     fireEvent.click(screen.getByRole("button", { name: /submit images/i }));
@@ -50,12 +56,14 @@ describe("/upload page", () => {
     );
   });
 
+  // hides navbar so users can not move away from page while uploading
   it("does not render navbar so user cannot navigate away", () => {
     render(<Page />);
     expect(screen.queryByTestId("navbar")).not.toBeInTheDocument();
   });
 });
 
+// while files are uploading, the sumbit button is disabled
 describe("ImageUploade", () => {
   it("submit button is disabled when loading is true", () => {
     const mockUploadState = { loading: true, setLoading: jest.fn() };
@@ -65,3 +73,5 @@ describe("ImageUploade", () => {
     ).toBeDisabled();
   });
 });
+
+// test error messages
