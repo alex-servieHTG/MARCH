@@ -50,7 +50,7 @@ function ImageUploader() {
     beforeUpload(file) {
       const isLt2M = file.size / 1024 / 1024 < 2;
       if (!isLt2M) {
-        message.error("Image must smaller than 2MB");
+        message.error("Image must be smaller than 2MB");
         return Upload.LIST_IGNORE;
       }
       return isLt2M;

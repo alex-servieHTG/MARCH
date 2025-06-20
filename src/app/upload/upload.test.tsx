@@ -1,7 +1,3 @@
-// Tests all the parts of the upload component
-// 1. Test if no files are submitted
-// 2. Test submit button while files are uploading
-
 import React from "react";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import "@testing-library/jest-dom";
@@ -26,12 +22,12 @@ jest.mock("next/navigation", () => ({
     },
   }),
 }));
+
 jest.mock("../../components/NavBar.tsx", () => ({
   __esModule: true,
   default: () => <div data-testid="navbar">Navbar</div>,
 }));
 
-// This is where people will upload all the pictures of their submission
 describe("/upload page", () => {
   beforeEach(() => {
     jest.clearAllMocks();
@@ -44,7 +40,6 @@ describe("/upload page", () => {
     ).toBeInTheDocument();
   });
 
-  // if there are no files uploaded, there will be an error when sumbitting
   it("shows error if submitting with no files", async () => {
     render(<Page />);
     fireEvent.click(screen.getByRole("button", { name: /submit images/i }));
@@ -55,9 +50,70 @@ describe("/upload page", () => {
     );
   });
 
-  // hides navbar so users can not move away from page while uploading
   it("does not render navbar so user cannot navigate away", () => {
     render(<Page />);
     expect(screen.queryByTestId("navbar")).not.toBeInTheDocument();
   });
+});
+
+jest.mock("antd", () => {
+  const original = jest.requireActual("antd");
+
+  return {
+    ...original,
+    Upload: {
+      ...original.Upload,
+      Dragger: ({ onChange }: any) => (
+        <input
+          data-testid="mock-upload-input"
+          type="file"
+          multiple
+          onChange={(e) => {
+            const files = Array.from(e.target.files || []);
+            const event = {
+              file: {
+                name: files[0]?.name,
+                status: "done",
+                originFileObj: files[0],
+                uid: "mocked-uid",
+              },
+              fileList: files.map((f) => ({
+                name: f.name,
+                status: "done",
+                originFileObj: f,
+                uid: "mocked-uid",
+              })),
+            };
+            onChange(event);
+          }}
+        />
+      ),
+    },
+  };
+});
+
+describe("error message handling", () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
+  it("shows error if no title image is selected", async () => {
+    render(<Page />);
+
+    const input = screen.getByTestId("mock-upload-input");
+    const file = new File(["test"], "image.jpg", { type: "image/jpeg" });
+
+    fireEvent.change(input, { target: { files: [file] } });
+
+    await waitFor(() =>
+      expect(screen.getByText(/uploaded successfully/i)).toBeInTheDocument()
+    );
+
+    fireEvent.click(screen.getByRole("button", { name: /submit images/i }));
+
+    expect(
+      await screen.findByText(/please select a file to be the title image/i)
+    ).toBeInTheDocument();
+  });
+
 });
