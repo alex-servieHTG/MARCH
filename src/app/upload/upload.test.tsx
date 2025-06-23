@@ -115,5 +115,4 @@ describe("error message handling", () => {
       await screen.findByText(/please select a file to be the title image/i)
     ).toBeInTheDocument();
   });
-
 });
