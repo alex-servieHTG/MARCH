@@ -56,6 +56,7 @@ describe("/upload page", () => {
     expect(screen.queryByTestId("navbar")).not.toBeInTheDocument();
   });
 
+  // figure this out if there is another way to test the drag and drop feature
   // it("uploads successfully via drop", async () => {
   //   render(<Page />);
 
@@ -68,24 +69,5 @@ describe("/upload page", () => {
 
   //   expect(await screen.findByText(/image\.jpg uploaded successfully/i)).toBeInTheDocument();
   // });
-
-  // it('shows error if no title image is selected', async () => {
-  //   const pageJsx = await Page();
-  //   render(<>{pageJsx}</>);
-
-  //   const input = screen.getByTestId("drag-to-upload");
-  //   const file = new File(["test"], "image.jpg", { type: "image/jpeg" });
-  //   fireEvent.change(input, { target: { files: [file] } });
-
-  //   await waitFor(() =>
-  //     expect(screen.getByText(/image\.jpg uploaded successfully/i)).toBeInTheDocument()
-  //   );
-
-  //   fireEvent.click(screen.getByRole("button", { name: /submit images/i }));
-
-  //   expect(
-  //     await screen.findByText(/please select a file to be the title image/i)
-  //   ).toBeInTheDocument(); 
-  // })
 
 });
