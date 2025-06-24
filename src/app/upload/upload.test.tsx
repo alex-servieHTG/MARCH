@@ -6,6 +6,7 @@ import Page from "./page";
 jest.mock("@imagekit/next", () => ({
   upload: jest.fn(),
 }));
+
 jest.mock("../actions/upload", () => ({
   generateImagekitSignature: jest.fn().mockResolvedValue({
     expire: "123",
@@ -54,29 +55,37 @@ describe("/upload page", () => {
     render(<Page />);
     expect(screen.queryByTestId("navbar")).not.toBeInTheDocument();
   });
+
+  // it("uploads successfully via drop", async () => {
+  //   render(<Page />);
+
+  //   const dropZone = screen.getByRole("button", { name: /click or drag file to this area to upload/i });
+
+  //   const file = new File(["test"], "image.jpg", { type: "image/jpeg" });
+  //   fireEvent.drop(dropZone, {
+  //     dataTransfer: { files: [file] }
+  //   });
+
+  //   expect(await screen.findByText(/image\.jpg uploaded successfully/i)).toBeInTheDocument();
+  // });
+
+  // it('shows error if no title image is selected', async () => {
+  //   const pageJsx = await Page();
+  //   render(<>{pageJsx}</>);
+
+  //   const input = screen.getByTestId("drag-to-upload");
+  //   const file = new File(["test"], "image.jpg", { type: "image/jpeg" });
+  //   fireEvent.change(input, { target: { files: [file] } });
+
+  //   await waitFor(() =>
+  //     expect(screen.getByText(/image\.jpg uploaded successfully/i)).toBeInTheDocument()
+  //   );
+
+  //   fireEvent.click(screen.getByRole("button", { name: /submit images/i }));
+
+  //   expect(
+  //     await screen.findByText(/please select a file to be the title image/i)
+  //   ).toBeInTheDocument(); 
+  // })
+
 });
-
-// describe("before submission error message handling", () => {
-//   beforeEach(() => {
-//     jest.clearAllMocks();
-//   });
-
-//   it("shows error if no title image is selected", async () => {
-//     render(<Page />);
-
-//     const input = screen.getByTestId("mock-upload-input");
-//     const file = new File(["test"], "image.jpg", { type: "image/jpeg" });
-
-//     fireEvent.change(input, { target: { files: [file] } });
-
-//     await waitFor(() =>
-//       expect(screen.getByText(/uploaded successfully/i)).toBeInTheDocument()
-//     );
-
-//     fireEvent.click(screen.getByRole("button", { name: /submit images/i }));
-
-//     expect(
-//       await screen.findByText(/please select a file to be the title image/i)
-//     ).toBeInTheDocument();
-//   });
-// });

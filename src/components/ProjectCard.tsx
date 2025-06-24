@@ -16,6 +16,8 @@ export default function DashboardProjects({
   return (
     <>
       <Card
+        //added this for testing...maybe remove later?
+        data-testid="project-card"
         key={project.id}
         className="max-w-sm cursor-pointer"
         title={project.title}
