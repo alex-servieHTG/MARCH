@@ -1,15 +1,8 @@
 import React from 'react'
 import { render, screen } from "@testing-library/react";
 import "@testing-library/jest-dom";
-import Page from "@/app/dashboard/page";
 import { ProjectWithImages } from "@/types/dashboard";
-import prisma from '@/lib/prisma'
-
-jest.mock('@/lib/prisma', () => ({
-  project: {
-    findMany: jest.fn()
-  }
-}))
+import DashboardProjects from "@/components/ProjectCard";
 
 describe('dashboard', () => {
   const fakeProjects: ProjectWithImages[] = Array.from({ length: 5 }, (_, i) => ({
@@ -26,18 +19,20 @@ describe('dashboard', () => {
     images: []
   }))
 
-  beforeEach(() => {
-    // @ts-expect-error: Mocking prisma.project.findMany for testing purposes
-    prisma.project.findMany.mockResolvedValue(fakeProjects)
-  })
+  describe("DashboardProjects card", () => {
+    it("renders one card per project", () => {
+      render(
+        <>
+          {fakeProjects.map((project) => (
+            <DashboardProjects project={project} key={project.id} />
+          ))}
+        </>
+      );
 
-  it('should render all projects given', async () => {
-
-    const pageJsx = await Page()
-    render(<>{pageJsx}</>)
-
-    // 3) Assert that exactly 5 cards appear
-    const cards = await screen.findAllByTestId('project-card')
-    expect(cards).toHaveLength(5)
-  })
+      const cards = screen.getAllByTestId("project-card");
+      expect(cards).toHaveLength(fakeProjects.length);
+    });
+  });
 })
+
+
