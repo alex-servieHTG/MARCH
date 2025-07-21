@@ -35,7 +35,7 @@ export default function Lightbox({
       >
         &times;
       </button>
-      <div className="bg-white rounded-lg shadow-lg w-[90vw] h-[80vh] flex flex-col">
+      <div className="bg-white dark:bg-[#171717] rounded-lg shadow-lg w-[90vw] h-[80vh] flex flex-col">
         <h2 className="text-2xl p-4 font-extrabold">{title}</h2>
         <div className="flex sm:flex-row flex-col-reverse flex-1 h-0 justify-around">
           <div className="h-full w-full sm:w-1/3 sm:max-w-[320px] overflow-y-auto">

@@ -15,3 +15,19 @@ body {
   background: var(--background);
   font-family: Helvetica, Arial, sans-serif;
 }
+
+.dark body{
+  color: var(--background);
+  background: var(--foreground);
+}
+
+.dark {
+  --antd-text-color: var(--background);
+  --antd-background-color: var(--foreground);
+}
+
+/* .ant-upload,
+.ant-upload * {
+  color: var(--antd-text-color) !important;
+  /* background-color: var(--antd-background-color) !important; */
+/* } */
