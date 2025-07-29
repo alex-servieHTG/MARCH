@@ -2,14 +2,31 @@
 
 import ProjectCard from "@/components/ProjectCard";
 import { useDataContext } from "@/app/context/dataContext";
-import { use, useState } from "react";
+import { use, useState, useMemo } from "react";
 import SearchBar from "@/components/SearchBar";
+import { useSearchParams, useRouter } from "next/navigation";
+import Lightbox from "./Lightbox";
 
 export default function ProjectDashboard() {
   const { filteredProjects, initialProjectsFetch, search } = useDataContext();
   const [loading, setLoading] = useState(false);
+  const searchParams = useSearchParams();
+  const router = useRouter();
+
+  const projectId = searchParams.get("id");
 
   const projectsToShow = search ? filteredProjects : use(initialProjectsFetch);
+
+  const selectedProject = useMemo(() => {
+    if (Array.isArray(projectsToShow)) {
+      return projectsToShow.find((p: { id: string }) => p.id === projectId);
+    }
+    return undefined;
+  }, [projectId, projectsToShow]);
+
+  const closeLightbox = () => {
+    router.push("/dashboard");
+  };
 
   if (projectsToShow instanceof Error) {
     console.error("Error fetching projects:", projectsToShow);
@@ -38,6 +55,16 @@ export default function ProjectDashboard() {
             <ProjectCard key={p.id} project={p} />
           ))}
         </div>
+      )}
+      {selectedProject && (
+        <Lightbox
+          images={selectedProject.images.map((img) => img.url)}
+          materials={selectedProject.projectMaterial}
+          title={selectedProject.title}
+          project={selectedProject}
+          open={true}
+          onClose={closeLightbox}
+        />
       )}
     </div>
   );

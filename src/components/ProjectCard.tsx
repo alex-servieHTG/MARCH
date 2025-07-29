@@ -4,13 +4,18 @@ import { useCallback, useState } from "react";
 import { Card } from "antd";
 import Image from "next/image";
 import Lightbox from "./Lightbox";
+import { useRouter } from "next/navigation";
 
 export default function ProjectCard({
   project,
 }: {
   project: FullyEnrichedProject;
 }) {
-  const [lightboxOpen, setLightboxOpen] = useState(false);
+  const router = useRouter();
+  const handleClick = () => {
+    if (!project.images.length) return;
+    router.push(`/dashboard?id=${project.id}`, { scroll: false });
+  };
 
   return (
     <>
@@ -19,7 +24,7 @@ export default function ProjectCard({
         data-testid={project.id}
         className="max-w-sm cursor-pointer"
         title={project.title}
-        onClick={() => project.images.length && setLightboxOpen(true)}
+        onClick={handleClick}
         hoverable
       >
         {Boolean(project.images.length) && (
@@ -33,14 +38,14 @@ export default function ProjectCard({
           />
         )}
       </Card>
-      <Lightbox
+      {/* <Lightbox
         images={project.images.map((img) => img.url)}
         materials={[...project.projectMaterial.map((m) => m)]}
         title={project.title}
         project={project}
         open={lightboxOpen}
         onClose={useCallback(() => setLightboxOpen(false), [])}
-      />
+      /> */}
     </>
   );
 }
