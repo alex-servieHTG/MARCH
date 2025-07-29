@@ -1,11 +1,10 @@
 import { render, screen } from "@testing-library/react";
 import ProjectCard from "./ProjectCard.tsx";
 import { generateImage, generateProject } from "@/tests/generators";
-import { Project } from "@prisma/client";
-import { ProjectMaterials, Images } from "@/types/dashboard";
+import { FullyEnrichedProject } from "@/types/dashboard";
 
 describe("ProjectCard", () => {
-  let project: Project & Images & ProjectMaterials;
+  let project: FullyEnrichedProject;
 
   beforeEach(() => {
     project = generateProject();

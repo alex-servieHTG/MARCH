@@ -3,10 +3,14 @@
     "email": "info@vensvanbelle.be",
     "title": "Stijn & Annemie W101",
     "description": "When Stijn and Annemie bought the listed school façade (anno 1908) with the vacant piece of land behind, they were already the fourth owners in a row. The other buyers hadn't found a proper solution to build a contemporary house behind this facade. The façade was beautiful but extremely difficult at the same time, because it does not have the proportions of an ordinary home. The windows are not only very large, they are also quite high in relation to the street. Contact with the street is very important, so it was decided to extrude the windows into spaces. The first extrusionn is a majestic entrance, the middle one is the kitchen, and the third is a desk/office space. This principle was repeated in the rear facade where the niches are storage, sitting and play areas. The living space is situated in between these two white extrusions. Everything is designed in relationship with the dimensions of the windows and the gap between the windows. The niches between the extruded windows are always served on two sides. The staircase is hidden between the entrance and the kitchen, as well as a toilet, and the entrance to the semi-underground basement. Furthermore, the kitchen, desk, cupboards etc were also fitted in the thicknesses of the walls. Because of the high position of the windows in relation to the street, there was room for a handy basement with extra storage space and laundry room under the kitchen and the office. Due to these level differences with the street side, the living space is somewhat lower and more enclosed. This gives a sense of homeliness, but at the same time everything is open and airy. The garden is slightly lower than the living space, giving you a wider view towards the back. This creates a broader feeling than the actual surface of the garden, and that is enhanced by the mirrored garden shed. The city garden feels more spacious than it actually is, and the new rear façade was designed in a simple way to give a pleasant atmosphere to the garden. The spaces of the extruded windows were kept abstract white, while in the interspace / living space a more cosy atmosphere was created. When choosing the materials in the living space it was very important that it would be a real home and not a school. In addition to the two brick walls, there are the wooden oak floor, the wooden beams of the ceiling and the industrial beam. The ceramic tiles in the entrance hall in two colors are again a conscious nod to it's previous life as a school. Also, the door between the entrance hall and the livingroom follows the original window division of the school façade. Due to the choice of materials, the building appears to be spontaneous and lived through, while it actually is a completely new construction behind the facade. The sunlight enters through the south-facing facade and the white tubes, but also through the central void in the building. The void was lined with greenhouse profiles and mirroring glass. This glass provides privacy for first floor, while the sunlight is drawn into the living space in a fascinating way. Every room has in some way contact with the living space, from the desk downstairs to the bedrooms upstairs. At the top of the stairs there is a spacious bathroom with a separate walk-in room with bath and shower. The corridor winds around the void, past the three children's bedrooms up to the master bedroom. From here there is a visual contact with the rest of the house through the one way see-through glass wall. The house is built with a logical route in mind: when the inhabitants get up in the morning, they first pass the bathroom, then go downstairs to the kitchen for breakfast, etc. The result is an airy and functional house, just like the concept of this new building that forms a harmonious unity with the 19th century façade.",
-    "location": "Ghent, Belgium",
+    "location": {
+      "country": "Belgium",
+      "city": "Ghent"
+    },
     "yearCompleted": 2016,
     "typology": "RESIDENTIAL",
     "area": 188,
+    "construction": "NEW",
     "imageDirectory": "/Users/alexservie/tech-stuff/March/march-app/local/img/avv",
     "imageCredit": "Tim Van de Velde",
     "materials": [
@@ -28,7 +32,12 @@
           "url": "https://crtc.be",
           "email": ["info@crtc.be"],
           "phoneNumber": ["+32 (09) 386 00 18", "0479 28 99 75"],
-          "location": "Deinze, Belgium"
+          "locations": [
+            {
+              "city": "Deinze",
+              "country": "Belgium"
+            }
+          ]
         }
       },
       {
@@ -53,7 +62,12 @@
           "url": "https://www.winckelmans.com",
           "email": ["contact@winckelmans.com"],
           "phoneNumber": ["+33 (0)3 20 92 16 54"],
-          "location": "Lomme, France"
+          "locations": [
+            {
+              "city": "Lomme",
+              "country": "France"
+            }
+          ]
         }
       },
       {
@@ -67,7 +81,12 @@
           "url": "https://dovrefire.com",
           "email": ["info@dovre.be"],
           "phoneNumber": ["+32 14 65 91 91 "],
-          "location": "Ravels, Belgium"
+          "locations": [
+            {
+              "city": "Ravels",
+              "country": "Belgium"
+            }
+          ]
         }
       },
       {
@@ -87,7 +106,12 @@
           "url": "https://bealinternational.com",
           "email": ["info@beal.be"],
           "phoneNumber": ["+32 81 83 57 57"],
-          "location": "Fernelmont, Belgium"
+          "locations": [
+            {
+              "city": "Fernelmont",
+              "country": "Belgium"
+            }
+          ]
         }
       },
       {
@@ -108,15 +132,26 @@
           "url": "https://www.thyssenkrupp-plastics.be",
           "email": ["info.plastics.be@thyssenkrupp-materials.com"],
           "phoneNumber": ["015/45 32 22"],
-          "location": "Mechelen, Belgium"
+          "locations": [
+            {
+              "city": "Mechelen",
+              "country": "Belgium"
+            }
+          ]
         }
       }
     ],
     "stakeholders": [
       {
         "type": "ARCHITECT",
-        "name": "Atelier Vens Vanbelle",
+        "companyName": "Atelier Vens Vanbelle",
         "email": ["info@vensvanbelle.be"],
+        "location": {
+          "country": "Belgium",
+          "city": "Ghent",
+          "street": "Fonteineplein 32",
+          "postcode": "9000"
+        },
         "phoneNumber": ["+32 486 65 76 02"]
       }
     ]
@@ -126,10 +161,14 @@
     "email": "info@vanlaethem-architecten.be",
     "title": "Eigen Kantoor VL-A",
     "description": "Tiny office building with bio-ecological materials, a small oasis of efficiency and serenity. That was the intention of our new office space, where we aimed for a harmonious example of ecological awareness and sustainability. With our projects, we always emphasize reducing our footprint and embracing biological building principles. With our own office space, we had to push this to the limit. We not only wanted to create a workplace, but also a symbol of our view on architecture and use of materials. The 40cm thick lime hemp walls contribute to a pleasant and healthy indoor climate. The lime hemp was finished on the outside with a plinth in facade bricks, above that with cedar shingles. Inside, the lime hemp remains visible, finished with a transparent linseed oil. The supporting structure consists of a skeleton of untreated pine wood. Where possible, circular materials were also used, such as the floor insulation with foam glass granulates and the tablet for the kitchenette. But the clay for the rammed earth floor was also recovered after the demolition of another project. Inside, every corner also exudes ecological awareness. For example, all interior walls and joinery were made of pine boards. For us, technology always comes second. In this case, we were able to connect to the technology of the adjacent house, such as the rainwater recovery system, the underfloor heating with solar collectors and the PV installation. Only a compact ventilation unit type D and a mini boiler were added. Our Tiny Office is therefore more than an efficient usable space – it is a symbol of our commitment to a greener future.",
-    "location": "Alken, Belgium",
+    "location": {
+      "country": "Belgium",
+      "city": "Alken"
+    },
     "yearCompleted": 2024,
     "typology": "COMMERCIAL",
     "area": 100,
+    "construction": "NEW",
     "imageDirectory": "/Users/alexservie/tech-stuff/March/march-app/local/img/vla",
     "imageCredit": "Tom Frederix",
     "materials": [
@@ -152,7 +191,12 @@
           "url": "https://bcmaterials.org",
           "email": ["info@bcmaterials.org", "sales@bcmaterials.org"],
           "phoneNumber": ["+32 2 831 68 80"],
-          "location": "Brussels, Belgium"
+          "locations": [
+            {
+              "city": "Brussels",
+              "country": "Belgium"
+            }
+          ]
         }
       },
       {
@@ -173,7 +217,24 @@
         "supplierContact": {
           "url": "https://ecobati.com",
           "phoneNumber": ["04 246 32 49"],
-          "location": "Netherlands, France, Luxemburg"
+          "locations": [
+            {
+              "city": "Nancy",
+              "country": "France"
+            },
+            {
+              "city": "Normandy",
+              "country": "France"
+            },
+            {
+              "city": "Arlon",
+              "country": "Belgium"
+            },
+            {
+              "city": "Brussels",
+              "country": "Belgium"
+            }
+          ]
         }
       },
       {
@@ -194,15 +255,26 @@
           "url": "https://www.woonder.be",
           "email": ["info@woonder.be"],
           "phoneNumber": [],
-          "location": "Ghent, Belgium"
+          "locations": [
+            {
+              "city": "Ghent",
+              "country": "Belgium"
+            }
+          ]
         }
       }
     ],
     "stakeholders": [
       {
         "type": "ARCHITECT",
-        "name": "Van Laethem Architecten",
+        "companyName": "Van Laethem Architecten",
         "email": ["info@vanlaethem-architecten.be"],
+        "location": {
+          "country": "Belgium",
+          "city": "Alken",
+          "street": "Steenweg 379",
+          "postcode": "3570"
+        },
         "phoneNumber": ["+32 497 11 64 24"]
       }
     ]

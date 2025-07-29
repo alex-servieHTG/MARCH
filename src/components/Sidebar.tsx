@@ -1,10 +1,9 @@
 "use client";
 
-import { ProjectMaterial, Project, Material } from "@prisma/client";
+import { ProjectMaterial, Material } from "@prisma/client";
 import {
-  Images,
   EnrichedProjectMaterials,
-  ProjectMaterials,
+  FullyEnrichedProject,
 } from "@/types/dashboard";
 import { Collapse, Tag } from "antd";
 
@@ -13,7 +12,7 @@ export function Sidebar({
   project,
 }: {
   materials: EnrichedProjectMaterials;
-  project: Project & Images & ProjectMaterials;
+  project: FullyEnrichedProject;
 }) {
   console.log("material", materials[0]);
   const MaterialDetails = ({
@@ -46,7 +45,9 @@ export function Sidebar({
   }));
   return (
     <div className="pl-4 pr-4 pb-4">
-      <h4 className="text-sm font-light">{project.location}</h4>
+      <h4 className="text-sm font-light">
+        {project.location.city}, {project.location.country}
+      </h4>
       <p className="text-sm font-light">{project.area}sqm</p>
       <p className="text-sm font-light">Completed in {project.yearCompleted}</p>
       <h4 className="font-medium mt-4 mb-4">Materials</h4>

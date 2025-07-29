@@ -1,5 +1,17 @@
 import { z } from "zod";
-import { BUILDING_TYPOLOGY, STAKEHOLDER_TYPE } from "@prisma/client";
+import {
+  BUILDING_TYPOLOGY,
+  STAKEHOLDER_TYPE,
+  CONSTRUCTION_TYPOLOGY,
+} from "@prisma/client";
+import { countryNames } from "./countries";
+
+const location = z.object({
+  city: z.string().min(1, "City is required"),
+  country: z.enum(countryNames, "Country is required"),
+  street: z.string().optional(),
+  postcode: z.string().optional(),
+});
 
 export const materialSchema = z.object({
   materialName: z.string().min(1, "Material name is required"),
@@ -13,20 +25,22 @@ export const materialSchema = z.object({
       "Please describe where the material is used. Interior / Exterior and on which surface (facade, flooring, etc.)"
     ),
 
-  url: z.string().url("Must be a valid URL"),
+  percentage: z.int().min(1).max(100).optional(),
+
+  url: z.url("Must be a valid URL").optional(),
 
   tags: z.array(z.string()),
 
   supplierName: z.string().min(1, "Supplier name is required"),
 
   supplierContact: z.object({
-    url: z.string().url("Must be a valid URL"),
+    url: z.url("Must be a valid URL"),
 
-    email: z.array(z.string().email()).nullish(),
+    email: z.array(z.email()).nullish(),
 
     phoneNumber: z.array(z.string().min(8).max(25)),
 
-    location: z.string().min(2),
+    locations: z.array(location),
   }),
 
   certifications: z.array(z.string()).nullish(),
@@ -35,18 +49,22 @@ export const materialSchema = z.object({
 export const stakeholder = z.object({
   type: z.enum([
     STAKEHOLDER_TYPE.ARCHITECT,
+    STAKEHOLDER_TYPE.INTERIOR_ARCHITECT,
     STAKEHOLDER_TYPE.CONTRACTOR,
     STAKEHOLDER_TYPE.ENGINEER,
   ]),
-  name: z.string().min(2),
 
-  email: z.array(z.string().email()),
+  companyName: z.string().min(2),
+
+  email: z.array(z.email()),
+
+  location,
 
   phoneNumber: z.array(z.string().min(8).max(19)),
 });
 
 export const projectSubmissionSchema = z.object({
-  email: z.string().email("Invalid email address"),
+  email: z.email("Invalid email address"),
 
   title: z.string().min(1, "Project title is required"),
 
@@ -54,7 +72,7 @@ export const projectSubmissionSchema = z.object({
     .string()
     .min(10, "Project description should be more detailed"),
 
-  location: z.string().min(2, "Location is required"),
+  location,
 
   yearCompleted: z
     .number()
@@ -65,8 +83,10 @@ export const projectSubmissionSchema = z.object({
   typology: z.enum([
     BUILDING_TYPOLOGY.RESIDENTIAL,
     BUILDING_TYPOLOGY.COMMERCIAL,
+    BUILDING_TYPOLOGY.MIXED_USE,
     BUILDING_TYPOLOGY.INDUSTRIAL,
     BUILDING_TYPOLOGY.INSTITUTIONAL,
+    BUILDING_TYPOLOGY.HEALTHCARE,
   ]),
 
   materials: z
@@ -78,8 +98,12 @@ export const projectSubmissionSchema = z.object({
   area: z.number().int(),
 
   imageCredit: z.string(),
-});
 
-// 👇 Type inference if needed elsewhere
-export type ProjectSubmission = z.infer<typeof projectSubmissionSchema>;
-export type Material = z.infer<typeof materialSchema>;
+  construction: z.enum([
+    CONSTRUCTION_TYPOLOGY.NEW,
+    CONSTRUCTION_TYPOLOGY.EXTENSION,
+    CONSTRUCTION_TYPOLOGY.RENOVATION,
+    CONSTRUCTION_TYPOLOGY.RESTORATION,
+    CONSTRUCTION_TYPOLOGY.CONVERSION,
+  ]),
+});

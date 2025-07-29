@@ -1,7 +1,6 @@
 generator client {
   provider        = "prisma-client-js"
   previewFeatures = ["driverAdapters"]
-
 }
 
 datasource db {
@@ -10,20 +9,42 @@ datasource db {
 }
 
 model Project {
-  id                     String            @id @default(cuid())
-  createdAt              DateTime          @default(now()) @db.Timestamp(6)
+  id                     String                  @id @default(cuid())
+  createdAt              DateTime                @default(now()) @db.Timestamp(6)
   title                  String
   description            String?
-  location               String
+  location               Location                @relation(fields: [locationId], references: [id])
+  locationId             String
   yearCompleted          Int
   typology               BUILDING_TYPOLOGY
-  authorEmail            String
-  selectedForCompetition Boolean           @default(false)
+  authorId               String
+  author                 User                    @relation(fields: [authorId], references: [id])
+  selectedForCompetition Boolean                 @default(false)
   images                 Image[]
-  projectMaterial        ProjectMaterial[] @relation("MaterialToProject")
+  projectMaterial        ProjectMaterial[]       @relation("MaterialToProject")
   materials              Material[]
   stakeholders           Stakeholder[]
-  area                   Int?
+  area                   Int
+  construction           CONSTRUCTION_TYPOLOGY
+  votes                  Int                     @default(0)
+}
+
+model User {
+  id        String    @id @default(cuid())
+  email     String    @unique
+  voteCount Int       @default(0)
+  projects  Project[]
+}
+
+model Location {
+  id          String        @id @default(cuid())
+  country     String
+  city        String
+  street      String?
+  postcode    String?
+  Project     Project[]
+  Supplier    Supplier[]
+  Stakeholder Stakeholder[]
 }
 
 model Image {
@@ -39,8 +60,10 @@ model Image {
 model Stakeholder {
   id          String           @id @default(cuid())
   type        STAKEHOLDER_TYPE
-  name        String
-  email       String[]
+  companyName String
+  email       String[] 
+  location    Location         @relation(fields: [locationId], references: [id])
+  locationId  String
   phoneNumber String[]
   projects    Project[]
 }
@@ -49,7 +72,7 @@ model Supplier {
   id          String     @id @default(cuid())
   name        String
   website     String?
-  location    String?
+  locations    Location[]
   email       String[]
   phoneNumber String[]
   materials   Material[]
@@ -59,13 +82,13 @@ model Material {
   id               String            @id @default(cuid())
   name             String
   description      String
-  url              String
+  url              String?
   supplierId       String
   supplier         Supplier          @relation(fields: [supplierId], references: [id])
   projectMaterials ProjectMaterial[] @relation("MaterialToProject")
   projects         Project[]
   images           Image[]
-  tags             String[] //characteristics, ex. natural, reused
+  tags             String[] //characteristics, ex. natural, reused, circular
   certifications   String[]
 }
 
@@ -74,19 +97,31 @@ model ProjectMaterial {
   materialId String
   projectId  String
   usedWhere  String
+  percentage Int?
   material   Material @relation("MaterialToProject", fields: [materialId], references: [id])
   project    Project  @relation("MaterialToProject", fields: [projectId], references: [id])
+}
+
+enum CONSTRUCTION_TYPOLOGY {
+  NEW
+  EXTENSION
+  RENOVATION
+  RESTORATION
+  CONVERSION
 }
 
 enum BUILDING_TYPOLOGY {
   RESIDENTIAL
   COMMERCIAL
+  MIXED_USE
   INDUSTRIAL
   INSTITUTIONAL
+  HEALTHCARE
 }
 
 enum STAKEHOLDER_TYPE {
   ARCHITECT
+  INTERIOR_ARCHITECT
   CONTRACTOR
   ENGINEER
 }

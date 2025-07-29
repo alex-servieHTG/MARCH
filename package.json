@@ -13,7 +13,7 @@
     "test:watch": "jest --watch"
   },
   "prisma": {
-    "seed": "ts-node -r tsconfig-paths/register local/seed.ts"
+    "seed": "ts-node -r tsconfig-paths/register prisma/seed.ts"
   },
   "dependencies": {
     "@ant-design/nextjs-registry": "^1.0.2",
@@ -31,7 +31,7 @@
     "react-hook-form": "^7.55.0",
     "tsconfig-paths": "^4.2.0",
     "vercel": "^41.4.1",
-    "zod": "^3.24.3"
+    "zod": "^4.0.5"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

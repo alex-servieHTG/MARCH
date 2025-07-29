@@ -92,117 +92,111 @@ function ImageUploader() {
   return (
     <div className="min-h-screen flex flex-col justify-center items-center">
       <>
-          <h2 className="font-bold text-3xl p-4">
-            The Final Step! Upload all images associated with the project
-          </h2>
-          <p>
-            Then select one image that you think best represents the project to
-            be the title image.
-          </p>
-          <p className="text-xs italic">
-            If you need help submitting your project, please contact{" "}
-            <a
-              href="mailto:info@marchmaterials.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              info@marchmaterials.com
-            </a>
-          </p>
-          <form
-            onSubmit={async (e) => {
-              e.preventDefault();
-              if (!email || !projectTitle || files.length === 0) {
-                message.error(
-                  "Missing required information, please upload at least one image."
-                );
-                return;
-              }
-              if (!titleImageUid) {
-                message.error("Please select a file to be the title image");
-                return;
-              }
-              setLoading(true);
-              try {
-                const res = await Promise.all(
-                  files.map(async (i): Promise<UploadResult | Error> => {
-                    const { expire, token, signature } =
-                      await generateImagekitSignature();
-                    const tags = i.uid === titleImageUid ? ["title-image"] : [];
-                    const fileName = formatImageFileName(
-                      projectTitle,
-                      email,
-                      i.name
-                    );
-                    const uploadResponse = await upload({
-                      file: i,
-                      fileName,
-                      tags,
-                      signature,
-                      token,
-                      expire,
-                      publicKey: IMAGE_KIT_PUBLIC_KEY,
-                      responseFields:
-                        "metadata, embeddedMetadata, customMetadata, tags",
-                      extensions: [
-                        {
-                          name: "google-auto-tagging",
-                          maxTags: 20,
-                          minConfidence: 60,
-                        },
-                      ],
-                    });
-                    if (!uploadResponse.fileId || !uploadResponse.url) {
-                      throw new Error("Upload failed: missing fileId or url");
-                    }
-                    return {
-                      fileId: uploadResponse.fileId,
-                      url: uploadResponse.url,
-                      AITags: uploadResponse.AITags,
-                    } as UploadResult;
-                  })
-                );
-                console.log("everything uploaded", res);
-                router.push("/thankyou");
-                return res;
-              } catch (err) {
-                // we should be sending this to a logging service for monitoring
-                console.error("failed upload", err);
-              }
-            }}
+        <h2 className="font-bold text-3xl p-4">
+          The Final Step! Upload all images associated with the project
+        </h2>
+        <p>
+          Then select one image that you think best represents the project to be
+          the title image.
+        </p>
+        <p className="text-xs italic">
+          If you need help submitting your project, please contact{" "}
+          <a
+            href="mailto:info@marchmaterials.com"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            <div className="mt-6 ">
-              <Dragger {...props} data-testid="drag-to-upload">
-                <p className="ant-upload-drag-icon ">
-                  <InboxOutlined />
-                </p>
-                <p className="ant-upload-text">
-                  Click or drag file to this area to upload
-                </p>
-                <p className="ant-upload-hint">
-                  Please upload all of the images associated with this project
-                  before clicking submit.
-                  <br />
-                  <span className="text-xs italic">
-                    Images must be smaller than 2MB and no larger than 25 megapixels.
-                  </span>
-                </p>
-              </Dragger>
-            </div>
-            <div className="flex justify-center">
-              <Button
-                className="m-5 p-4 mt-10"
-                type="primary"
-                data-testid="image-submit"
-                loading={loading}
-                disabled={loading}
-                htmlType="submit"
-              >
-                Submit Images
-              </Button>
-            </div>
-          </form>
-        </>
+            info@marchmaterials.com
+          </a>
+        </p>
+        <form
+          onSubmit={async (e) => {
+            e.preventDefault();
+            if (!email || !projectTitle || files.length === 0) {
+              message.error(
+                "Missing required information, please upload at least one image."
+              );
+              return;
+            }
+            if (!titleImageUid) {
+              message.error("Please select a file to be the title image");
+              return;
+            }
+            setLoading(true);
+            try {
+              const res = await Promise.all(
+                files.map(async (i): Promise<UploadResult | Error> => {
+                  const { expire, token, signature } =
+                    await generateImagekitSignature();
+                  const tags = i.uid === titleImageUid ? ["title-image"] : [];
+                  const fileName = formatImageFileName(
+                    projectTitle,
+                    email,
+                    i.name
+                  );
+                  const uploadResponse = await upload({
+                    file: i,
+                    fileName,
+                    tags,
+                    signature,
+                    token,
+                    expire,
+                    publicKey: IMAGE_KIT_PUBLIC_KEY,
+                    responseFields:
+                      "metadata, embeddedMetadata, customMetadata, tags",
+                  });
+                  if (!uploadResponse.fileId || !uploadResponse.url) {
+                    throw new Error("Upload failed: missing fileId or url");
+                  }
+                  return {
+                    fileId: uploadResponse.fileId,
+                    url: uploadResponse.url,
+                    AITags: uploadResponse.AITags,
+                  } as UploadResult;
+                })
+              );
+              console.log("everything uploaded", res);
+              router.push("/thankyou");
+              return res;
+            } catch (err) {
+              // we should be sending this to a logging service for monitoring
+              console.error("failed upload", err);
+            }
+          }}
+        >
+          <div className="mt-6 ">
+            <Dragger {...props} data-testid="drag-to-upload">
+              <p className="ant-upload-drag-icon ">
+                <InboxOutlined />
+              </p>
+              <p className="ant-upload-text">
+                Click or drag file to this area to upload
+              </p>
+              <p className="ant-upload-hint">
+                Please upload all of the images associated with this project
+                before clicking submit.
+                <br />
+                <span className="text-xs italic">
+                  Images must be smaller than 2MB and no larger than 25
+                  megapixels.
+                </span>
+              </p>
+            </Dragger>
+          </div>
+          <div className="flex justify-center">
+            <Button
+              className="m-5 p-4 mt-10"
+              type="primary"
+              data-testid="image-submit"
+              loading={loading}
+              disabled={loading}
+              htmlType="submit"
+            >
+              Submit Images
+            </Button>
+          </div>
+        </form>
+      </>
     </div>
   );
 }

@@ -1,0 +1,22 @@
+[
+  {
+    "email": "alice.johnson@example.com",
+    "voteCount": 5
+  },
+  {
+    "email": "bob.smith@example.com", 
+    "voteCount": 12
+  },
+  {
+    "email": "carol.davis@example.com",
+    "voteCount": 3
+  },
+  {
+    "email": "david.wilson@example.com",
+    "voteCount": 8
+  },
+  {
+    "email": "eva.brown@example.com",
+    "voteCount": 0
+  }
+]
