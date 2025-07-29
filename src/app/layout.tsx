@@ -4,6 +4,8 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
 import NavBar from "@/components/NavBar";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
+import { ThemeProvider } from "@/components/theme-provider"
+
 import { DataProvider } from "./context/dataContext";
 import { getAllProjects } from "@/utils/dashboard";
 
@@ -25,18 +27,25 @@ export default function RootLayout({
 }>) {
   const initialProjectsFetch = getAllProjects();
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className="antialiased">
-        <AntdRegistry>
-          <nav>
-            <NavBar />
-          </nav>
-          <DataProvider initialProjectsFetch={initialProjectsFetch}>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <AntdRegistry>
+            <nav>
+              <NavBar />
+            </nav>
+            <DataProvider initialProjectsFetch={initialProjectsFetch}>
             {children}
-          </DataProvider>
+            </DataProvider>
           <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS_ID || ""} />
-          <Analytics />
-        </AntdRegistry>
+            <Analytics />
+          </AntdRegistry>
+        </ThemeProvider>
       </body>
     </html>
   );

@@ -4,7 +4,7 @@ import { Button } from "antd";
 
 export default function ThankYouPage() {
   return (
-    <div className="min-h-screen flex flex-col justify-center items-center bg-[var(--background)] text-[var(--foreground)] p-10 text-center">
+    <div className="min-h-screen flex flex-col justify-center items-center p-10 text-center">
       <h3 className="text-green-600 text-2xl font-bold">
         Thank you for your submission! Your project details and images have
         successfully been submitted.

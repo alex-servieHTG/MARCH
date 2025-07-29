@@ -49,7 +49,7 @@ export function Sidebar({
         {project.location.city}, {project.location.country}
       </h4>
       <p className="text-sm font-light">{project.area}sqm</p>
-      <p className="text-sm font-light">completed in {project.yearCompleted}</p>
+      <p className="text-sm font-light">Completed in {project.yearCompleted}</p>
       <h4 className="font-medium mt-4 mb-4">Materials</h4>
       <Collapse items={items} />
       <p className="text-md mt-6">About this project:</p>

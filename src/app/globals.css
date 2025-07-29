@@ -15,3 +15,8 @@ body {
   background: var(--background);
   font-family: Helvetica, Arial, sans-serif;
 }
+
+.dark body{
+  color: var(--background);
+  background: var(--foreground);
+}
