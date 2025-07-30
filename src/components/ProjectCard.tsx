@@ -1,9 +1,7 @@
 "use client";
 import { FullyEnrichedProject } from "@/types/dashboard";
-import { useCallback, useState } from "react";
 import { Card } from "antd";
 import Image from "next/image";
-import Lightbox from "./Lightbox";
 import { useRouter } from "next/navigation";
 
 export default function ProjectCard({
@@ -38,14 +36,6 @@ export default function ProjectCard({
           />
         )}
       </Card>
-      {/* <Lightbox
-        images={project.images.map((img) => img.url)}
-        materials={[...project.projectMaterial.map((m) => m)]}
-        title={project.title}
-        project={project}
-        open={lightboxOpen}
-        onClose={useCallback(() => setLightboxOpen(false), [])}
-      /> */}
     </>
   );
 }

@@ -5,7 +5,8 @@ import {
   EnrichedProjectMaterials,
   FullyEnrichedProject,
 } from "@/types/dashboard";
-import { Collapse, Tag } from "antd";
+import { Collapse, Tag, message } from "antd";
+import { ShareAltOutlined } from "@ant-design/icons";
 
 export function Sidebar({
   materials,
@@ -43,6 +44,11 @@ export function Sidebar({
       <MaterialDetails {...{ usedWhere: m.usedWhere, ...m.material }} />
     ),
   }));
+  const handleShare = () => {
+    const currentUrl = typeof window !== "undefined" ? window.location.href : "";
+    navigator.clipboard.writeText(currentUrl);
+    message.success("Project URL copied to clipboard");
+  }
   return (
     <div className="pl-4 pr-4 pb-4">
       <h4 className="text-sm font-light">
@@ -54,6 +60,9 @@ export function Sidebar({
       <Collapse items={items} />
       <p className="text-md mt-6">About this project:</p>
       <p className="text-sm font-light mt-2">{project.description}</p>
+      <div className="flex justify-end mt-4">
+        <ShareAltOutlined className="text-2xl cursor-pointer" onClick={handleShare} />
+      </div>
     </div>
   );
 }
