@@ -4,6 +4,7 @@ import { readFileSync } from "fs";
 import prisma from "../src/lib/prisma";
 import type { ProjectSubmissionForm } from "../src/types/forms";
 import { projectSubmissionSchema } from "../src/lib/validation/projectSchema";
+import { Prisma } from "@prisma/client";
 
 const jotformData: ProjectSubmissionForm[] = JSON.parse(
   readFileSync("src/tests/jotformData.json", "utf-8")
@@ -43,58 +44,46 @@ async function createProject(projectData: ProjectWithImageFolder) {
     const project = await prisma.project.create({
       data: {
         title: data.title,
-        description: data.description ?? "",
-        yearCompleted: data.yearCompleted ?? 2025,
-        typology: data.typology ?? "INSTITUTIONAL",
-        construction: data.construction ?? "NEW",
-        area: data.area ?? 0,
+        description: data.description,
+        yearCompleted: data.yearCompleted,
+        typology: data.typology,
+        construction: data.construction,
+        area: data.area,
         // imageCredit: data.imageCredit ?? "", this isn't a field in the schema but I think we may want to add it
-        location: data.location
-          ? {
+        location: {
+          create: {
+            street: data.location.street ?? Prisma.skip,
+            city: data.location.city,
+            country: data.location.country,
+            postcode: data.location.postcode ?? Prisma.skip,
+          },
+        },
+        author: {
+          connectOrCreate: {
+            where: { email: data.email },
+            create: { email: data.email },
+          },
+        },
+        stakeholders: data.stakeholders.length > 0 && {
+          create: data.stakeholders.map((s) => ({
+            type: s.type,
+            companyName: s.companyName,
+            email: s.email,
+            phoneNumber: s.phoneNumber,
+            location: {
               create: {
-                street: data.location.street ?? "",
-                city: data.location.city ?? "",
-                country: data.location.country ?? "",
-                postcode: data.location.postcode ?? "",
+                street: s.location.street ?? Prisma.skip,
+                city: s.location.city,
+                country: s.location.country,
+                postcode: s.location.postcode ?? Prisma.skip,
               },
-            }
-          : undefined,
-        author: data.email
-          ? {
-              connectOrCreate: {
-                where: { email: data.email },
-                create: { email: data.email },
-              },
-            }
-          : undefined,
-        stakeholders: Array.isArray(data.stakeholders) && data.stakeholders.length > 0
-          ? {
-              create: data.stakeholders
-                .filter((s) => !!s.companyName)
-                .map((s) => ({
-                  type: s.type ?? "ARCHITECT",
-                  companyName: s.companyName,
-                  email: s.email?.filter(Boolean) ?? [],
-                  phoneNumber: s.phoneNumber ?? [],
-                  location: s.location
-                    ? {
-                        create: {
-                          street: s.location.street ?? "",
-                          city: s.location.city ?? "",
-                          country: s.location.country ?? "",
-                          postcode: s.location.postcode ?? "",
-                        },
-                      }
-                    : undefined,
-                })),
-            }
-          : undefined,
+            },
+          })),
+        },
       },
     });
 
-    if (Array.isArray(data.materials) && data.materials.length > 0) {
-      await createMaterialsAndConnections(data.materials, project.id);
-    }
+    await createMaterialsAndConnections(data.materials, project.id);
 
     console.log(`Project created: ${project.title}`);
     return project;
@@ -108,42 +97,39 @@ async function createMaterialsAndConnections(
   materials: ProjectSubmissionForm["materials"],
   projectId: string
 ) {
-  return Promise.all(
-    materials
-      .filter((m) => m.materialName && m.supplierName)
-      .map(async (m) => {
-        try {
-          return prisma.material.create({
-            data: {
-              name: m.materialName,
-              description: m.description ?? "",
-              url: m.url ?? "",
-              tags: m.tags ?? [],
-              certifications: [],
-              supplier: {
-                create: {
-                  name: m.supplierName,
-                  website: m.supplierContact.url ?? "",
-                  email: m.supplierContact.email ?? [],
-                  phoneNumber: m.supplierContact.phoneNumber ?? [],
-                  locations: {
-                    create: m.supplierContact.locations ?? [],
-                  },
-                },
-              },
-              projectMaterials: {
-                create: {
-                  usedWhere: m.usedWhere ?? "",
-                  projectId,
-                  percentage: 40,
+  return Promise.allSettled(
+    materials.map(async (m) => {
+      try {
+        return prisma.material.create({
+          data: {
+            name: m.materialName,
+            description: m.description,
+            url: m.url ?? Prisma.skip,
+            tags: m.tags,
+            supplier: {
+              create: {
+                name: m.supplierName,
+                website: m.supplierContact.url,
+                email: m.supplierContact.email,
+                phoneNumber: m.supplierContact.phoneNumber,
+                locations: {
+                  create: m.supplierContact.locations ?? Prisma.skip,
                 },
               },
             },
-          });
-        } catch (err) {
-          console.error(`Error creating material "${m.materialName}"`, err);
-        }
-      })
+            projectMaterials: {
+              create: {
+                usedWhere: m.usedWhere,
+                projectId,
+                percentage: m.percentage ?? Prisma.skip,
+              },
+            },
+          },
+        });
+      } catch (err) {
+        console.error(`Error creating material "${m.materialName}"`, err);
+      }
+    })
   );
 }
 
