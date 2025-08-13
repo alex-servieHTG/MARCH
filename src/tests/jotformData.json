@@ -1,0 +1,1586 @@
+[
+  {
+    "title": "Primary school De Verwondering",
+    "email": "info@orga-architect.nl",
+    "description": "De Verwondering is the first of a new generation of school buildings that seek to (re)connect children to nature through its presence in architecture, interior design and landscape. Better learning and more nature awareness in future generations through biophilic and regenerative design.",
+    "location": {
+      "street": "Van Goorstraat 4 Nijmegen",
+      "city": "Almere",
+      "country": "Netherlands",
+      "postcode": "6512ED"
+    },
+    "yearCompleted": 2019,
+    "typology": "INSTITUTIONAL",
+    "construction": "NEW",
+    "area": 2050,
+    "imageCredit": "Photographer: Ruben Visser",
+    "materials": [
+      {
+        "materialName": "Nobelwood cladding",
+        "description": "",
+        "usedWhere": "Facade cladding",
+        "tags": [],
+        "url": "",
+        "supplierName": "Foreco",
+        "supplierContact": {
+          "url": "",
+          "email": [],
+          "phoneNumber": [],
+          "locations": []
+        }
+      },
+      {
+        "materialName": "Multitherm wood fibre insulation",
+        "description": "",
+        "usedWhere": "Wall insulation",
+        "tags": [],
+        "url": "",
+        "supplierName": "Gutex",
+        "supplierContact": {
+          "url": "",
+          "email": [],
+          "phoneNumber": [],
+          "locations": []
+        }
+      }
+    ],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "ORGA architect",
+        "email": [
+          "info@orga-architect.nl"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "Van Goorstraat 4 Nijmegen",
+          "city": "Almere",
+          "country": "Netherlands",
+          "postcode": "6512ED"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Bienenskulptur",
+    "email": "info@barbaraschnetzler.ch",
+    "description": "The Beesculpture is a space for Bees and Humans. The exterior design shows the negative form of a bee cell and reflects the basic hexagonal structure of bees. The 7 meter high space was built  with sustainable materials in a collaborative effort with many volunteers. A space for contemplation.",
+    "location": {
+      "street": "hauensteinstr. 118 Basel",
+      "city": "Dornach",
+      "country": "Switzerland",
+      "postcode": "4059"
+    },
+    "yearCompleted": 2025,
+    "typology": "INSTITUTIONAL",
+    "construction": "NEW",
+    "area": 9,
+    "imageCredit": "there are my own images",
+    "materials": [],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "Barbara Philomena Schnetzler",
+        "email": [
+          "info@barbaraschnetzler.ch"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "hauensteinstr. 118 Basel",
+          "city": "Dornach",
+          "country": "Switzerland",
+          "postcode": "4059"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Nature Retreat Westbroek",
+    "email": "info@orga-architect.nl",
+    "description": "Designed as a place for urban professionals to reconnect with nature, these biophilic buildings made of wood nudge the occupants to go outdoors. Biobased materials, plenty of daylight, luscious green roofs, and transparent facades blur the lines between the man-made and the natural world.",
+    "location": {
+      "street": "Van Goorstraat 4 Nijmegen",
+      "city": "Westbroek",
+      "country": "Netherlands",
+      "postcode": "6512ED"
+    },
+    "yearCompleted": 2021,
+    "typology": "INSTITUTIONAL",
+    "construction": "RESTORATION",
+    "area": 290,
+    "imageCredit": "Photographer: Ruben Visser",
+    "materials": [
+      {
+        "materialName": "Thermoflex wood fibre insulation",
+        "description": "",
+        "usedWhere": "Wall insulation",
+        "tags": [],
+        "url": "",
+        "supplierName": "Gutex",
+        "supplierContact": {
+          "url": "",
+          "email": [],
+          "phoneNumber": [],
+          "locations": []
+        }
+      },
+      {
+        "materialName": "Clay plaster",
+        "description": "",
+        "usedWhere": "Interior wall finishing",
+        "tags": [],
+        "url": "",
+        "supplierName": "ClayTec",
+        "supplierContact": {
+          "url": "",
+          "email": [],
+          "phoneNumber": [],
+          "locations": []
+        }
+      },
+      {
+        "materialName": "Flax insulated timber roof elements",
+        "description": "",
+        "usedWhere": "Prefab insulated roof elements for both buildings",
+        "tags": [],
+        "url": "",
+        "supplierName": "Isovlas",
+        "supplierContact": {
+          "url": "",
+          "email": [],
+          "phoneNumber": [],
+          "locations": []
+        }
+      }
+    ],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "ORGA architect",
+        "email": [
+          "info@orga-architect.nl"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "Van Goorstraat 4 Nijmegen",
+          "city": "Westbroek",
+          "country": "Netherlands",
+          "postcode": "6512ED"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Augstine's Garden",
+    "email": "liene@sampling.lv",
+    "description": "Augustine's Garden is a residential ensemble resulting of a transformation of former low-rise industrial buildings in the courtyard of a 1900s quarter. The site is converted into a contemporary urban garden, and the post-industrial aesthetic of the buildings reflects the concept of adaptive reuse.",
+    "location": {
+      "street": "Baznicas 7 Riga",
+      "city": "Riga",
+      "country": "Latvia",
+      "postcode": "LV1010"
+    },
+    "yearCompleted": 2025,
+    "typology": "INSTITUTIONAL",
+    "construction": "CONVERSION",
+    "area": 830,
+    "imageCredit": "Madara Kuplā",
+    "materials": [],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "Sampling",
+        "email": [
+          "liene@sampling.lv"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "Baznicas 7 Riga",
+          "city": "Riga",
+          "country": "Latvia",
+          "postcode": "LV1010"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Les promenades d'Icare",
+    "email": "s.delloue@ma-atelier.fr",
+    "description": "Ambitious energy renovation project for 250 homes, using the ENERGIESPRONG methodology for industrial mass building and performance improvement.\nThe elevation adopts a classic contemporary style. A specific tile is proposed. With a 7 cm exposure, it reinvents the rhythm and vibration of the brick.",
+    "location": {
+      "street": "9 Rue du Dieu de Marcq Lille",
+      "city": "Hem",
+      "country": "France",
+      "postcode": "59800"
+    },
+    "yearCompleted": 2025,
+    "typology": "INSTITUTIONAL",
+    "construction": "RENOVATION",
+    "area": 15940,
+    "imageCredit": "Laurene Delloue",
+    "materials": [
+      {
+        "materialName": "Tile Sk1n",
+        "description": "",
+        "usedWhere": "tile in elevation",
+        "tags": [],
+        "url": "",
+        "supplierName": "HDF distribution",
+        "supplierContact": {
+          "url": "",
+          "email": [],
+          "phoneNumber": [],
+          "locations": []
+        }
+      }
+    ],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "atelier ma",
+        "email": [
+          "s.delloue@ma-atelier.fr"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "9 Rue du Dieu de Marcq Lille",
+          "city": "Hem",
+          "country": "France",
+          "postcode": "59800"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Château de Beaucastel",
+    "email": "contact@studiomediterranee.works",
+    "description": "At Beaucastel, water, wind, soil, and sun shape an architecture rooted in place, using excavation earth for cellars and walls and a rain-fed cistern that supports winemaking and cools interiors passively. Lime, clay, earth, sand, wood, stone ensure an aging well and self-sufficiency project.",
+    "location": {
+      "street": "56 bis Av. Eisenhower Avignon",
+      "city": "Courthézon",
+      "country": "France",
+      "postcode": "84000"
+    },
+    "yearCompleted": 2025,
+    "typology": "INSTITUTIONAL",
+    "construction": "RENOVATION",
+    "area": 8400,
+    "imageCredit": "Iwan Baan & Michael Falgren",
+    "materials": [],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "Studio Méditerranée",
+        "email": [
+          "contact@studiomediterranee.works"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "56 bis Av. Eisenhower Avignon",
+          "city": "Courthézon",
+          "country": "France",
+          "postcode": "84000"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Rosa María house",
+    "email": "ignacio@delavegacanolasso.com",
+    "description": "Two patios organize a fluid transition between interior and exterior, enhancing light, views, and climate control. Natural materials like lime, pine, and terracotta promote tactility, durability, and circularity through prefabrication and passive design strategies",
+    "location": {
+      "street": "calle fresnos 21 Madrid",
+      "city": "Madrid",
+      "country": "Spain",
+      "postcode": "28210"
+    },
+    "yearCompleted": 2024,
+    "typology": "INSTITUTIONAL",
+    "construction": "NEW",
+    "area": 320,
+    "imageCredit": "Paco Marín / aerial photos: Studio cafecito",
+    "materials": [],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "delavegacanolasso",
+        "email": [
+          "ignacio@delavegacanolasso.com"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "calle fresnos 21 Madrid",
+          "city": "Madrid",
+          "country": "Spain",
+          "postcode": "28210"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Rosa María house",
+    "email": "ignacio@delavegacanolasso.com",
+    "description": "Two patios organize a fluid transition between interior and exterior, enhancing light, views, and climate control. Natural materials like lime, pine, and terracotta promote tactility, durability, and circularity through prefabrication and passive design strategies",
+    "location": {
+      "street": "calle fresnos 21 Madrid",
+      "city": "Madrid",
+      "country": "Spain",
+      "postcode": "28210"
+    },
+    "yearCompleted": 2024,
+    "typology": "INSTITUTIONAL",
+    "construction": "NEW",
+    "area": 320,
+    "imageCredit": "Paco Marín / aerial photos: Studio cafecito",
+    "materials": [],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "delavegacanolasso",
+        "email": [
+          "ignacio@delavegacanolasso.com"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "calle fresnos 21 Madrid",
+          "city": "Madrid",
+          "country": "Spain",
+          "postcode": "28210"
+        }
+      }
+    ]
+  },
+  {
+    "title": "DUCHESSE",
+    "email": "notan@notanoffice.be",
+    "description": "An existing building and two former industrial halls are transformed into varied housing around a shared green space. The project preserves key heritage elements, enhances natural light and privacy, and promotes community through adaptive reuse and collective outdoor areas.",
+    "location": {
+      "street": "Av. de la Crouonne 382 Brussels",
+      "city": "Brussels",
+      "country": "Belgium",
+      "postcode": "1050"
+    },
+    "yearCompleted": 2022,
+    "typology": "INSTITUTIONAL",
+    "construction": "RENOVATION",
+    "area": 1080,
+    "imageCredit": "Stijn Bolaert",
+    "materials": [
+      {
+        "materialName": "Front building",
+        "description": "",
+        "usedWhere": "the front building",
+        "tags": [],
+        "url": "",
+        "supplierName": "none",
+        "supplierContact": {
+          "url": "",
+          "email": [],
+          "phoneNumber": [],
+          "locations": []
+        }
+      },
+      {
+        "materialName": "concrete landscape floor",
+        "description": "",
+        "usedWhere": "to complete the landscape path",
+        "tags": [],
+        "url": "",
+        "supplierName": "none",
+        "supplierContact": {
+          "url": "",
+          "email": [],
+          "phoneNumber": [],
+          "locations": []
+        }
+      }
+    ],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "NOTAN OFFICE",
+        "email": [
+          "notan@notanoffice.be"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "Av. de la Crouonne 382 Brussels",
+          "city": "Brussels",
+          "country": "Belgium",
+          "postcode": "1050"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Haus am Ziestsee",
+    "email": "hensel@camaberlin.de",
+    "description": "Reconstruction and extension of a weekend house from the 1920s, at the Ziestsee, in the vicinity of Berlin. The house has been rebuilt in accordance with its original condition and extended with a wooden house. An outbuilding in wooden construction completes the ensemble.",
+    "location": {
+      "street": "Leibnizstraße 33 Berlin",
+      "city": "Bindow",
+      "country": "Germany",
+      "postcode": "10625"
+    },
+    "yearCompleted": 2023,
+    "typology": "INSTITUTIONAL",
+    "construction": "CONVERSION",
+    "area": 120,
+    "imageCredit": "David Hiepler",
+    "materials": [],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "CAMA A",
+        "email": [
+          "hensel@camaberlin.de"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "Leibnizstraße 33 Berlin",
+          "city": "Bindow",
+          "country": "Germany",
+          "postcode": "10625"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Chiericati Enoteca",
+    "email": "info@sqaudra.works",
+    "description": "The refurbishment of the Enoteca is the centrepiece of a transformation in which the spatial disposition is adapted to the new challenges of the winery. Embracing self-construction, the project fosters a close connection with the people, the materials of the regions and the reuse of local resources.",
+    "location": {
+      "street": "Bändlistrasse 29 Zürich",
+      "city": "Bellinzona",
+      "country": "Switzerland",
+      "postcode": "8064"
+    },
+    "yearCompleted": 2025,
+    "typology": "INSTITUTIONAL",
+    "construction": "RENOVATION",
+    "area": 2130,
+    "imageCredit": "squadra",
+    "materials": [],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "squadra.works",
+        "email": [
+          "info@sqaudra.works"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "Bändlistrasse 29 Zürich",
+          "city": "Bellinzona",
+          "country": "Switzerland",
+          "postcode": "8064"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Café nomade",
+    "email": "ced@hammak.be",
+    "description": "Design, planning, and supervision of a participatory project to build a bar for non-profit organisations.\nThe triply cabinet accommodates all the recycled components: kitchen cabinets, sink, cladding, and refrigerators. The project, carried out with volunteers from was completed over three weekends.",
+    "location": {
+      "street": "rue Adolphe Lavalée 39 Bruxelles",
+      "city": "Bruxelles",
+      "country": "Belgium",
+      "postcode": "1080"
+    },
+    "yearCompleted": 2025,
+    "typology": "INSTITUTIONAL",
+    "construction": "RENOVATION",
+    "area": 100,
+    "imageCredit": "Augustin Macq",
+    "materials": [
+      {
+        "materialName": "reclaimed furniture",
+        "description": "",
+        "usedWhere": "kithcen whites modules",
+        "tags": [],
+        "url": "",
+        "supplierName": "sourced from another site",
+        "supplierContact": {
+          "url": "",
+          "email": [],
+          "phoneNumber": [],
+          "locations": []
+        }
+      }
+    ],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "collectif hammak - Augustin Macq",
+        "email": [
+          "ced@hammak.be"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "rue Adolphe Lavalée 39 Bruxelles",
+          "city": "Bruxelles",
+          "country": "Belgium",
+          "postcode": "1080"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Bademaschinen",
+    "email": "armelle@actstudio.eu",
+    "description": "Bademaschinen lies in the Oslo Fjord and is inspired by the Sjøbadehus with their traditional roof shapes and towers. The primary design driving factor was the reuse of teak window frames from a 1960s nursing home outside of Oslo that was undergoing rehabilitation and conversion into housing.",
+    "location": {
+      "street": "Helgesensgate 38A Oslo",
+      "city": "Oslo",
+      "country": "Norway",
+      "postcode": "0553"
+    },
+    "yearCompleted": 2021,
+    "typology": "INSTITUTIONAL",
+    "construction": "NEW",
+    "area": 90,
+    "imageCredit": "Becky Zeller",
+    "materials": [],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "ACT! and Borhaven Arkitekter",
+        "email": [
+          "armelle@actstudio.eu"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "Helgesensgate 38A Oslo",
+          "city": "Oslo",
+          "country": "Norway",
+          "postcode": "0553"
+        }
+      }
+    ]
+  },
+  {
+    "title": "PONT-FARBEL",
+    "email": "info@ldwa.ch",
+    "description": "The renovation project involves the installation of a central load-bearing wall made of TERRAPAD and partitions made of TERRAPLAC, as well as HAGA BIOTHERM insulating plaster made of lime and cork. Several elements have been reused, such as doors, joists and exterior paving.",
+    "location": {
+      "street": "rue du Beulet 4 Geneva",
+      "city": "Vich",
+      "country": "Switzerland",
+      "postcode": "1203"
+    },
+    "yearCompleted": 2025,
+    "typology": "INSTITUTIONAL",
+    "construction": "RENOVATION",
+    "area": 190,
+    "imageCredit": "Brian Atkins",
+    "materials": [],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "LDW",
+        "email": [
+          "info@ldwa.ch"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "rue du Beulet 4 Geneva",
+          "city": "Vich",
+          "country": "Switzerland",
+          "postcode": "1203"
+        }
+      }
+    ]
+  },
+  {
+    "title": "natural kindergarten",
+    "email": "jasmin.endres@constructum.gmbh",
+    "description": "Renovation of a barn in a natural kindergarten with natural materials, wood, lime etc.",
+    "location": {
+      "street": "Gottlieb-Daimler-Str. 2 Owingen",
+      "city": "Owingen",
+      "country": "Germany",
+      "postcode": "88696"
+    },
+    "yearCompleted": 2025,
+    "typology": "INSTITUTIONAL",
+    "construction": "RENOVATION",
+    "area": 140,
+    "imageCredit": "",
+    "materials": [],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "Constructum GmbH",
+        "email": [
+          "jasmin.endres@constructum.gmbh"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "Gottlieb-Daimler-Str. 2 Owingen",
+          "city": "Owingen",
+          "country": "Germany",
+          "postcode": "88696"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Passive House in Serra d'Ordal",
+    "email": "info@slowstudio.es",
+    "description": "House in Serra d'Ordal combines bioclimatic strategies, natural materials, and sustainable solutions to create a net-zero home with minimal environmental impact. Near Barcelona, it features a bioclimatic patio, cross ventilation, rammed earth walls with cork insulation, and renewable energy systems.",
+    "location": {
+      "street": "Carrer Sant Joan de la Salle",
+      "city": "Barcelona",
+      "country": "Barcelona",
+      "postcode": "42"
+    },
+    "yearCompleted": 2024,
+    "typology": "INSTITUTIONAL",
+    "construction": "NEW",
+    "area": 300,
+    "imageCredit": "Salva López",
+    "materials": [],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "Slow Studio",
+        "email": [
+          "info@slowstudio.es"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "Carrer Sant Joan de la Salle",
+          "city": "Barcelona",
+          "country": "Barcelona",
+          "postcode": "42"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Zurich Bus Station",
+    "email": "info@holzhausenzweifel.ch",
+    "description": "Because of the short life-span of the building (max. 10 yrs.) we chose a simple woodframe construction with mineral insulation. No internal claddings, only visible installations. Facade of painted 3-layer woodboards, protected by a steel canopy. The building is designed for easy disassembly.",
+    "location": {
+      "street": "Am Wasser 55 Zurich",
+      "city": "Zurich",
+      "country": "Switzerland",
+      "postcode": "8004"
+    },
+    "yearCompleted": 2024,
+    "typology": "INSTITUTIONAL",
+    "construction": "NEW",
+    "area": 162,
+    "imageCredit": "Jürgen Beck, Zurich",
+    "materials": [],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "Holzhausen Zweifel Architekten",
+        "email": [
+          "info@holzhausenzweifel.ch"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "Am Wasser 55 Zurich",
+          "city": "Zurich",
+          "country": "Switzerland",
+          "postcode": "8004"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Omloop",
+    "email": "info@he-architectuur.be",
+    "description": "How to tackle the typical Flemish “Fermette?” After a critical analysis, the answer was found in densifying and reconnecting with the surroundings. Doing so by transforming a part of the roof into a wintergarden and optimizing the existing spaces.",
+    "location": {
+      "street": "Koopliedenstraat 65 Brussels",
+      "city": "Roosdaal,",
+      "country": "",
+      "postcode": "Brussel"
+    },
+    "yearCompleted": 2023,
+    "typology": "INSTITUTIONAL",
+    "construction": "RENOVATION",
+    "area": 184,
+    "imageCredit": "Tim Van de Velde",
+    "materials": [],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "hé! architectuur",
+        "email": [
+          "info@he-architectuur.be"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "Koopliedenstraat 65 Brussels",
+          "city": "Roosdaal,",
+          "country": "",
+          "postcode": "Brussel"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Blue House Azores",
+    "email": "backlar@gmail.com",
+    "description": "The Blue House is a sustainable retreat in the Azores, built with wooden prefabricated elements and clad in up-cycled ocean plastic, and local carpentry techniques. Blending modern design with local stone and native plants, it exemplifies low-impact architecture in harmony with its coastal setting.",
+    "location": {
+      "street": "Largo Santos 9",
+      "city": "Capelas",
+      "country": "Lisbon",
+      "postcode": "4D"
+    },
+    "yearCompleted": 2023,
+    "typology": "INSTITUTIONAL",
+    "construction": "RENOVATION",
+    "area": 140,
+    "imageCredit": "Francisco Nogueira",
+    "materials": [
+      {
+        "materialName": "Up-cycled ocean plastic slats",
+        "description": "",
+        "usedWhere": "Facades",
+        "tags": [],
+        "url": "",
+        "supplierName": "Extruplas",
+        "supplierContact": {
+          "url": "",
+          "email": [],
+          "phoneNumber": [],
+          "locations": []
+        }
+      }
+    ],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "Atelier Backlar",
+        "email": [
+          "backlar@gmail.com"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "Largo Santos 9",
+          "city": "Capelas",
+          "country": "Lisbon",
+          "postcode": "4D"
+        }
+      }
+    ]
+  },
+  {
+    "title": "The Dialogue Express Cafe",
+    "email": "jan@jankattein.com",
+    "description": "Dialogue Express Cafe is run by a social enterprise that creates employment and social opportunities for deaf and hard of hearing persons who take customer orders in British Sign Language. The Cafe is located inside a converted railway carriage outside Stratford Station in East London.",
+    "location": {
+      "street": "277 New North Road London",
+      "city": "London",
+      "country": "7aa United Kingdom",
+      "postcode": "n1"
+    },
+    "yearCompleted": 2025,
+    "typology": "INSTITUTIONAL",
+    "construction": "CONVERSION",
+    "area": 50,
+    "imageCredit": "Jan Kattein Architects",
+    "materials": [],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "Jan Kattein Architects",
+        "email": [
+          "jan@jankattein.com"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "277 New North Road London",
+          "city": "London",
+          "country": "7aa United Kingdom",
+          "postcode": "n1"
+        }
+      }
+    ]
+  },
+  {
+    "title": "The Paper Garden",
+    "email": "jan@jankattein.com",
+    "description": "The Paper Garden is an ecology garden and educational building in London built by volunteers using 60% retained, reclaimed + natural materials. The space is used for growing, making, cooking, story-telling and stillness so people can come together and contribute to ecological and social change.",
+    "location": {
+      "street": "277 New North Road London",
+      "city": "London",
+      "country": "7AA United Kingdom",
+      "postcode": "N1"
+    },
+    "yearCompleted": 2023,
+    "typology": "INSTITUTIONAL",
+    "construction": "CONVERSION",
+    "area": 260,
+    "imageCredit": "Jan Kattein Architects",
+    "materials": [],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "Jan Kattein Architects",
+        "email": [
+          "jan@jankattein.com"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "277 New North Road London",
+          "city": "London",
+          "country": "7AA United Kingdom",
+          "postcode": "N1"
+        }
+      }
+    ]
+  },
+  {
+    "title": "UDO",
+    "email": "belwerk@posteo.de",
+    "description": "UDO is versatile standalone micro home suitable for craftsmen’s platform truck. It is constructed around a wooden structure, sustainable insulation and a façade made of reused aluminium. Using the adjustable legs UDO can be placed almost anywhere: on construction sides aswell as in the landscape.",
+    "location": {
+      "street": "Belvederer Allee 66 Weimar",
+      "city": "Weimar",
+      "country": "Germany",
+      "postcode": "99425"
+    },
+    "yearCompleted": 2023,
+    "typology": "INSTITUTIONAL",
+    "construction": "NEW",
+    "area": 8,
+    "imageCredit": "Belwerk Kollektiv",
+    "materials": [
+      {
+        "materialName": "Plywood",
+        "description": "",
+        "usedWhere": "Strucural Base",
+        "tags": [],
+        "url": "",
+        "supplierName": "ZEG",
+        "supplierContact": {
+          "url": "",
+          "email": [],
+          "phoneNumber": [],
+          "locations": []
+        }
+      },
+      {
+        "materialName": "Soft wood fiber mat",
+        "description": "",
+        "usedWhere": "Insulation",
+        "tags": [],
+        "url": "",
+        "supplierName": "STEICO",
+        "supplierContact": {
+          "url": "",
+          "email": [],
+          "phoneNumber": [],
+          "locations": []
+        }
+      },
+      {
+        "materialName": "Ball Lamp",
+        "description": "",
+        "usedWhere": "Interior lightning",
+        "tags": [],
+        "url": "",
+        "supplierName": "Belwerk Kollektiv",
+        "supplierContact": {
+          "url": "",
+          "email": [],
+          "phoneNumber": [],
+          "locations": []
+        }
+      }
+    ],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "Belwerk Kollektiv",
+        "email": [
+          "belwerk@posteo.de"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "Belvederer Allee 66 Weimar",
+          "city": "Weimar",
+          "country": "Germany",
+          "postcode": "99425"
+        }
+      }
+    ]
+  },
+  {
+    "title": "30+8 Social Housing units in Palma de Mallorca",
+    "email": "xavier@vivasarquitectos.com",
+    "description": "The residential project of 38 dwellings combines sustainability, functionality, and a social character. It uses local materials such as compressed earth blocks and timber, reducing the carbon footprint. The spaces are flexible, well-ventilated, and promote community living and energy efficiency.",
+    "location": {
+      "street": "Ramón Turró 100-104",
+      "city": "Palma",
+      "country": "Barcelona",
+      "postcode": "4º-8ª"
+    },
+    "yearCompleted": 2025,
+    "typology": "INSTITUTIONAL",
+    "construction": "NEW",
+    "area": 2,
+    "imageCredit": "José Hevia",
+    "materials": [],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "Vivas Arquitectos",
+        "email": [
+          "xavier@vivasarquitectos.com"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "Ramón Turró 100-104",
+          "city": "Palma",
+          "country": "Barcelona",
+          "postcode": "4º-8ª"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Barretts Grove",
+    "email": "sam@groupwork.uk.com",
+    "description": "Barretts Grove by GROUPWORK is a six-flat CLT building with a red brick cladding which serves as a rainscreen and echoes the surrounding buildings. The CLT superstructure is left exposed, obviating the need for other finishes or unnecessary details and reducing the embodied carbon by 20%.",
+    "location": {
+      "street": "16 Orsman Road London",
+      "city": "London",
+      "country": "5QJ United Kingdom",
+      "postcode": "N1"
+    },
+    "yearCompleted": 2017,
+    "typology": "INSTITUTIONAL",
+    "construction": "NEW",
+    "area": 635,
+    "imageCredit": "",
+    "materials": [],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "GROUPWORK",
+        "email": [
+          "sam@groupwork.uk.com"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "16 Orsman Road London",
+          "city": "London",
+          "country": "5QJ United Kingdom",
+          "postcode": "N1"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Chalet Dahu - Low-impact hempcrete self-build",
+    "email": "Oliver.east@live.co.uk",
+    "description": "Family self-build project inspired by the local, vernacular architecture. Entirely breathable building envelope. 40 cm thick hempcrete walls. Solar panels. Electric energy for heating. Large openings for passive solar gain on south and west facades. Minimises synthetic materials (< 3% of volume).",
+    "location": {
+      "street": "526 Route de la Frasse Les Contamines-Montjoie",
+      "city": "Les",
+      "country": "France",
+      "postcode": "74170"
+    },
+    "yearCompleted": 2025,
+    "typology": "INSTITUTIONAL",
+    "construction": "NEW",
+    "area": 120,
+    "imageCredit": "Chuck East",
+    "materials": [
+      {
+        "materialName": "Cork granules",
+        "description": "",
+        "usedWhere": "Cork granules were used in an insulated lime slab.",
+        "tags": [],
+        "url": "",
+        "supplierName": "Materiaux Naturels",
+        "supplierContact": {
+          "url": "",
+          "email": [],
+          "phoneNumber": [],
+          "locations": []
+        }
+      },
+      {
+        "materialName": "Expanded Glass Insulation Products",
+        "description": "",
+        "usedWhere": "Expanded glass gravel was used as a breathable",
+        "tags": [],
+        "url": "",
+        "supplierName": "Glapor",
+        "supplierContact": {
+          "url": "",
+          "email": [],
+          "phoneNumber": [],
+          "locations": []
+        }
+      }
+    ],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "This was a self-build,",
+        "email": [
+          "Oliver.east@live.co.uk"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "526 Route de la Frasse Les Contamines-Montjoie",
+          "city": "Les",
+          "country": "France",
+          "postcode": "74170"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Joli",
+    "email": "ns.a@nelestragier.brussels",
+    "description": "The house echoes the former holiday home, with generous windows framing marsh, garden, and sky. In a compact spatial composition, each room connects uniquely to the landscape. Built from prefabricated wood and straw bales finished with clay, it’s a low-energy home made from sustainable materials.",
+    "location": {
+      "street": "Albertstraat 20 Laken",
+      "city": "Dendermonde",
+      "country": "Belgium",
+      "postcode": "1020"
+    },
+    "yearCompleted": 2011,
+    "typology": "INSTITUTIONAL",
+    "construction": "NEW",
+    "area": 125,
+    "imageCredit": "Frederik Vercruysse",
+    "materials": [],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "Nele Stragier Architecture",
+        "email": [
+          "ns.a@nelestragier.brussels"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "Albertstraat 20 Laken",
+          "city": "Dendermonde",
+          "country": "Belgium",
+          "postcode": "1020"
+        }
+      }
+    ]
+  },
+  {
+    "title": "The Makers Barn",
+    "email": "hello@hutchdesign.co",
+    "description": "Once an abandoned piggery, now a fine example of elemental architecture, The Makers Barn goes to great lengths to honour its agricultural origins. Borrowing its robust pitched roof from the nearby Tudor cottages and clad with vertical larch planks, against a meadow of tall grasses and wildflowers.",
+    "location": {
+      "street": "65 Neal Street London",
+      "city": "UK",
+      "country": "9PJ United Kingdom",
+      "postcode": "WC2H"
+    },
+    "yearCompleted": 2023,
+    "typology": "INSTITUTIONAL",
+    "construction": "RENOVATION",
+    "area": 65,
+    "imageCredit": "Helen Cathcart",
+    "materials": [
+      {
+        "materialName": "Board-Formed Concrete",
+        "description": "",
+        "usedWhere": "Fireplace",
+        "tags": [],
+        "url": "",
+        "supplierName": "Concrete Supplier",
+        "supplierContact": {
+          "url": "",
+          "email": [],
+          "phoneNumber": [],
+          "locations": []
+        }
+      },
+      {
+        "materialName": "Larch",
+        "description": "",
+        "usedWhere": "Roof Cladding",
+        "tags": [],
+        "url": "",
+        "supplierName": "Timber Supplier",
+        "supplierContact": {
+          "url": "",
+          "email": [],
+          "phoneNumber": [],
+          "locations": []
+        }
+      }
+    ],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "HUTCH",
+        "email": [
+          "hello@hutchdesign.co"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "65 Neal Street London",
+          "city": "UK",
+          "country": "9PJ United Kingdom",
+          "postcode": "WC2H"
+        }
+      }
+    ]
+  },
+  {
+    "title": "After-School Care Centre Waldorf School am Prenzlauer Berg",
+    "email": "d.schneider-maas@monoarchitekten.de",
+    "description": "The existing school was energy-retrofitted and extended with a after-school care centre that contrasts the existing structures. The design is rooted in regional, renewable materials: timber construction with straw insulation and clay plaster. Green roofs and minimal technology complete the concept.",
+    "location": {
+      "street": "Glogauer Straße 6 Berlin",
+      "city": "Berlin",
+      "country": "Germany",
+      "postcode": "10999"
+    },
+    "yearCompleted": 2017,
+    "typology": "INSTITUTIONAL",
+    "construction": "RENOVATION",
+    "area": 785,
+    "imageCredit": "Gregor Schmidt",
+    "materials": [],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "MONO Architekten",
+        "email": [
+          "d.schneider-maas@monoarchitekten.de"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "Glogauer Straße 6 Berlin",
+          "city": "Berlin",
+          "country": "Germany",
+          "postcode": "10999"
+        }
+      }
+    ]
+  },
+  {
+    "title": "The Gallery House",
+    "email": "mail@wimgoesarchitectuur.be",
+    "description": "Shifting from gallery to house, suggested without determining space as footprint and ecological considerations, form the topic the project. Purified details, based on a “countryman’s logic” lead to a self-evident simplicity and readability of the architecture seemingly ‘belonging’ to the landscape.",
+    "location": {
+      "street": "Tennisbaanstraat 74 Ghent",
+      "city": "Landegem,",
+      "country": "",
+      "postcode": "Oost-Vlaanderen"
+    },
+    "yearCompleted": 2023,
+    "typology": "INSTITUTIONAL",
+    "construction": "NEW",
+    "area": 167,
+    "imageCredit": "Eva Faché",
+    "materials": [
+      {
+        "materialName": "Hempcrete (compacted by hand)",
+        "description": "",
+        "usedWhere": "Hempcrete is used to insulate in between the wooden structure and the half-timbering",
+        "tags": [],
+        "url": "",
+        "supplierName": "Woonder",
+        "supplierContact": {
+          "url": "",
+          "email": [],
+          "phoneNumber": [],
+          "locations": []
+        }
+      },
+      {
+        "materialName": "Natural Calque Plaster and Natural Calque Paint",
+        "description": "",
+        "usedWhere": "Interior and exterior wall finishing",
+        "tags": [],
+        "url": "",
+        "supplierName": "/",
+        "supplierContact": {
+          "url": "",
+          "email": [],
+          "phoneNumber": [],
+          "locations": []
+        }
+      },
+      {
+        "materialName": "Wood Wool Insulation",
+        "description": "",
+        "usedWhere": "Roof insulation",
+        "tags": [],
+        "url": "",
+        "supplierName": "STEICO",
+        "supplierContact": {
+          "url": "",
+          "email": [],
+          "phoneNumber": [],
+          "locations": []
+        }
+      },
+      {
+        "materialName": "Finishing Boards / Recycled paper insulation",
+        "description": "",
+        "usedWhere": "Interior construction (building panels) for ceiling cladding and interior walls",
+        "tags": [],
+        "url": "",
+        "supplierName": "Fermacell",
+        "supplierContact": {
+          "url": "",
+          "email": [],
+          "phoneNumber": [],
+          "locations": []
+        }
+      },
+      {
+        "materialName": "Bamboo Mats",
+        "description": "",
+        "usedWhere": "permanent formwork for hempcrete",
+        "tags": [],
+        "url": "",
+        "supplierName": "/",
+        "supplierContact": {
+          "url": "",
+          "email": [],
+          "phoneNumber": [],
+          "locations": []
+        }
+      }
+    ],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "Wim Goes Architectuur",
+        "email": [
+          "mail@wimgoesarchitectuur.be"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "Tennisbaanstraat 74 Ghent",
+          "city": "Landegem,",
+          "country": "",
+          "postcode": "Oost-Vlaanderen"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Kiosk zur FÜRstin",
+    "email": "belwerk@posteo.de",
+    "description": "Make do with what is. The kiosk consists of 90% reused building material that were obtained directly from the surrounding mayor construction site – its offcuts, its demolition waste or the trees that had to make way. We built without using any cement or fresh concrete.",
+    "location": {
+      "street": "Belvederer Allee 66 Weimar",
+      "city": "München",
+      "country": "Germany",
+      "postcode": "99425"
+    },
+    "yearCompleted": 2024,
+    "typology": "INSTITUTIONAL",
+    "construction": "NEW",
+    "area": 20,
+    "imageCredit": "Belwerk Kollektiv",
+    "materials": [],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "Belwerk Kollektiv",
+        "email": [
+          "belwerk@posteo.de"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "Belvederer Allee 66 Weimar",
+          "city": "München",
+          "country": "Germany",
+          "postcode": "99425"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Gemüseeck – Center for Bioregional Architecture",
+    "email": "fanelsa@atelier-fanelsa.de",
+    "description": "The Gemüseeck is a center for bioregional architecture, providing an environment for learning and prototyping regenerative building materials: geo-based, bio-based and re-use. This project frames a new holistic social practice and an economy of commoning for the rural region of Uckermark.",
+    "location": {
+      "street": "Lindenplatz 4 Gerswalde",
+      "city": "Gerswalde",
+      "country": "Germany",
+      "postcode": "17268"
+    },
+    "yearCompleted": 2025,
+    "typology": "INSTITUTIONAL",
+    "construction": "CONVERSION",
+    "area": 220,
+    "imageCredit": "Atelier Fanelsa",
+    "materials": [
+      {
+        "materialName": "Cellular Glas",
+        "description": "",
+        "usedWhere": "Floor insulation",
+        "tags": [],
+        "url": "",
+        "supplierName": "Glapor",
+        "supplierContact": {
+          "url": "",
+          "email": [],
+          "phoneNumber": [],
+          "locations": []
+        }
+      }
+    ],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "Atelier Fanelsa",
+        "email": [
+          "fanelsa@atelier-fanelsa.de"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "Lindenplatz 4 Gerswalde",
+          "city": "Gerswalde",
+          "country": "Germany",
+          "postcode": "17268"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Lake House Bad Saarow",
+    "email": "architekten@weinmillergrossmann.de",
+    "description": "The intent was to create a sustainble and contemporary house for a young familiy with two children. The house is located right at the shore of a lake and is surrounded by a big natural garden. It is primarily constructed from timber, making up the main material of its structure and all over cladding",
+    "location": {
+      "street": "Kurfürstendamm 178/179 Berlin",
+      "city": "Bad",
+      "country": "Germany",
+      "postcode": "10707"
+    },
+    "yearCompleted": 2024,
+    "typology": "INSTITUTIONAL",
+    "construction": "NEW",
+    "area": 350,
+    "imageCredit": "Stefan Müller",
+    "materials": [
+      {
+        "materialName": "Natural Stone",
+        "description": "",
+        "usedWhere": "Interior flooring all over on the ground level",
+        "tags": [],
+        "url": "",
+        "supplierName": "Grigio Alpe",
+        "supplierContact": {
+          "url": "",
+          "email": [],
+          "phoneNumber": [],
+          "locations": []
+        }
+      }
+    ],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "Weinmiller Großmann Architekten PartGmbB",
+        "email": [
+          "architekten@weinmillergrossmann.de"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "Kurfürstendamm 178/179 Berlin",
+          "city": "Bad",
+          "country": "Germany",
+          "postcode": "10707"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Building Beyond Bricks",
+    "email": "korovesi.artemis@gmail.com",
+    "description": "Created by Building Beyond Borders students of Hasselt University with local support, the project features a pavilion and earth oven in an abandoned vicarage’s garden in Belgium. Built with bio-based, geo-based, and reclaimed materials, the project showcases inclusive, sustainable architecture.",
+    "location": {
+      "street": "40 Rue de Belveaux",
+      "city": "Helzoldstraat",
+      "country": "floor Luxembourg",
+      "postcode": "1st"
+    },
+    "yearCompleted": 2024,
+    "typology": "INSTITUTIONAL",
+    "construction": "NEW",
+    "area": 26,
+    "imageCredit": "Olmo Peeters, https://olmopeeters.be/work",
+    "materials": [],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "Building Beyond Borders postgraduate certificate 2023-2024, UHasselt",
+        "email": [
+          "korovesi.artemis@gmail.com"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "40 Rue de Belveaux",
+          "city": "Helzoldstraat",
+          "country": "floor Luxembourg",
+          "postcode": "1st"
+        }
+      }
+    ]
+  },
+  {
+    "title": "House without any cement",
+    "email": "buero@kofinkschels.de",
+    "description": "A very small house, built without cement or adhesives. Foundations are solid granite blocks. Prefabricated timber walls filled with hempcrete, which insulates and wraps the building, plastered with lime. This \"neo-timber-frame\" method minimizes thermal bridges and uses natural, sustainable materials",
+    "location": {
+      "street": "Frundsbergstraße 34 München",
+      "city": "Europe",
+      "country": "Germany",
+      "postcode": "80634"
+    },
+    "yearCompleted": 2025,
+    "typology": "INSTITUTIONAL",
+    "construction": "NEW",
+    "area": 112,
+    "imageCredit": "Simon Jüttner",
+    "materials": [],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "Buero Kofink Schels",
+        "email": [
+          "buero@kofinkschels.de"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "Frundsbergstraße 34 München",
+          "city": "Europe",
+          "country": "Germany",
+          "postcode": "80634"
+        }
+      }
+    ]
+  },
+  {
+    "title": "office  Van Laethem - Architecten",
+    "email": "info@vanlaethem-architecten.be",
+    "description": "Our Tiny Office is a functional but compact, serene workspace built from mainly wood, hempcrete and rammed earth. Natural materials and minimal tech reflect our vision for sustainable design proving that eco-conscious building enhances comfort and atmosphere, and does not limit it.",
+    "location": {
+      "street": "Steenweg Alken",
+      "city": "Alken",
+      "country": "Belgium",
+      "postcode": "3570"
+    },
+    "yearCompleted": 2023,
+    "typology": "INSTITUTIONAL",
+    "construction": "NEW",
+    "area": 34,
+    "imageCredit": "Tom Frederix",
+    "materials": [],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "Van Laethem - Architecten",
+        "email": [
+          "info@vanlaethem-architecten.be"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "Steenweg Alken",
+          "city": "Alken",
+          "country": "Belgium",
+          "postcode": "3570"
+        }
+      }
+    ]
+  },
+  {
+    "title": "Inhabiting the stable",
+    "email": "db@bardyersin.ch",
+    "description": "The project involves converting a disused rural section of a farm into an apartment. The living area occupies the former hayloft, while the bedrooms and bathroom are located in the old stables. The combination of old walls and more recent brick additions enhances the didactic quality of the space.",
+    "location": {
+      "street": "Rue du Château",
+      "city": "Prez-vers-Siviriez,",
+      "country": "Romont",
+      "postcode": "124"
+    },
+    "yearCompleted": 2024,
+    "typology": "INSTITUTIONAL",
+    "construction": "CONVERSION",
+    "area": 77,
+    "imageCredit": "David BARD",
+    "materials": [
+      {
+        "materialName": "Brick",
+        "description": "",
+        "usedWhere": "Structural wall",
+        "tags": [],
+        "url": "",
+        "supplierName": "HGC Handel",
+        "supplierContact": {
+          "url": "",
+          "email": [],
+          "phoneNumber": [],
+          "locations": []
+        }
+      }
+    ],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "BARD YERSIN architectes",
+        "email": [
+          "db@bardyersin.ch"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "Rue du Château",
+          "city": "Prez-vers-Siviriez,",
+          "country": "Romont",
+          "postcode": "124"
+        }
+      }
+    ]
+  },
+  {
+    "title": "SWEAT. Sauna",
+    "email": "tomnguyen1604@gmail.com",
+    "description": "",
+    "location": {
+      "street": "Unterm Markt 10 Stadtroda",
+      "city": "Delft,",
+      "country": "",
+      "postcode": "Thüringen"
+    },
+    "yearCompleted": 2025,
+    "typology": "INSTITUTIONAL",
+    "construction": "NEW",
+    "area": 42,
+    "imageCredit": "",
+    "materials": [],
+    "stakeholders": [
+      {
+        "type": "ARCHITECT",
+        "companyName": "SWEAT.",
+        "email": [
+          "tomnguyen1604@gmail.com"
+        ],
+        "phoneNumber": [],
+        "location": {
+          "street": "Unterm Markt 10 Stadtroda",
+          "city": "Delft,",
+          "country": "",
+          "postcode": "Thüringen"
+        }
+      }
+    ]
+  }
+]
