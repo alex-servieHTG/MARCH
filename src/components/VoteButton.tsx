@@ -1,16 +1,17 @@
 "use client";
 
 import { useState } from "react";
-import { Button, Modal, Input, message } from "antd";
+import { Modal, Input, message } from "antd";
 import { z } from "zod";
 import { castVote } from "@/app/actions/vote";
 
 type Props = {
   projectId: string;
   setVotes: (votes: number) => void;
+  antdAdjustment: boolean;
 };
 
-export default function VoteButton({ projectId, setVotes }: Props) {
+export default function VoteButton({ projectId, setVotes, antdAdjustment }: Props) {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
@@ -41,13 +42,13 @@ export default function VoteButton({ projectId, setVotes }: Props) {
     }
   };
 
+  const verticalSpacing = antdAdjustment ? "py-1 pt-2 mb-1" : "py-2"
+
   return (
     <>
-      <div className="flex items-center justify-between">
-        <Button type="primary" onClick={() => setModalOpen(true)}>
-          Vote for this project
-        </Button>
-      </div>
+      <button className={`px-4 border-2 border-black ${verticalSpacing} hover:opacity-75 hover:border-opacity-75 rounded-md flex items-baseline justify-center`} onClick={() => setModalOpen(true)}>
+        <span className="text-xl font-extrabold leading-none">Vote</span>
+      </button >
       <Modal
         title="Enter your email"
         open={modalOpen}

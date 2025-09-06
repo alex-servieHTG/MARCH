@@ -17,7 +17,7 @@ export async function importProjects(csvPath: string) {
   const raw = fs.readFileSync(csvPath, "utf-8");
   const records = parse(raw, {
     columns: true,
-    delimiter: ";",
+    // delimiter: ";",
     skip_empty_lines: true,
   });
   const typedRecords = records as Array<Record<string, string>>;

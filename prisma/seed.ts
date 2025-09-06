@@ -195,11 +195,12 @@ const createFullyEnrichedProject = async (
 };
 
 export async function main(): Promise<void> {
-  console.info("SEEDING", testData.length);
+  console.info("main: SEEDING", testData.length);
   let allProjects: Array<Project>;
   try {
-    if (await isAlreadySeeded()) return;
-    else {
+    if (await isAlreadySeeded()) {
+      return
+    } else {
       allProjects = await Promise.all(
         testData.map((p: ProjectWithImageFolder) => {
           return createFullyEnrichedProject(p);
