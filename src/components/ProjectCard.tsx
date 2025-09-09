@@ -4,6 +4,7 @@ import { useCallback, useState } from "react";
 import { Card } from "antd";
 import Image from "next/image";
 import Lightbox from "./Lightbox";
+import VoteButton from "./VoteButton";
 
 export default function ProjectCard({
   project,
@@ -17,6 +18,7 @@ export default function ProjectCard({
   const titleImage = project.images.find((i) =>
     i.aiTags.includes("title-image")
   );
+
   return (
     <>
       <Card
@@ -42,7 +44,10 @@ export default function ProjectCard({
           )
         }
       >
-        <div className="text-sm text-gray-700">Votes: {voteCount}</div>
+        <div className="flex flex-row justify-between items-center">
+          <div className="text-sm text-gray-700">Votes: {voteCount}</div>
+          <VoteButton projectId={project.id} setVotes={setVoteCount} antdAdjustment={false}></VoteButton>
+        </div>
       </Card>
       <Lightbox
         images={project.images.map((img) => img.url)}
@@ -56,4 +61,5 @@ export default function ProjectCard({
       />
     </>
   );
+
 }
