@@ -6,9 +6,9 @@ export default function Page() {
     <div className="min-h-screen">
       <div className="m-4">
 
-          <Suspense fallback={<p>loading projects...</p>}>
-            <ProjectDashboard />
-          </Suspense>
+        <Suspense fallback={<p>loading projects...</p>}>
+          <ProjectDashboard />
+        </Suspense>
 
       </div>
     </div>

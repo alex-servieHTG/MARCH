@@ -9,11 +9,22 @@ const imagekit = new ImageKit({
   urlEndpoint: IMAGE_KIT_BASE_URL,
 });
 
+const normalize = (str) =>
+  str
+    .replace(/["'_\-]/g, "")
+    .toLowerCase()
+    .trim();
+
 async function createConnectedImage({ projectTitle, email, url, tags }) {
   console.info(`creating image for ${projectTitle} by ${email}`);
   if (!projectTitle || !email || !url) {
     console.error("Missing required fields");
-    throw new Error("Missing required fields", { projectTitle, email, url });
+    throw new Error("Missing required fields", {
+      projectTitle,
+      email,
+      url,
+      status: "rejected",
+    });
   }
   try {
     // first check image is not already uploaded
@@ -32,23 +43,39 @@ async function createConnectedImage({ projectTitle, email, url, tags }) {
 
     if (!user) {
       console.warn(`No user found with email: ${email}`);
-      throw new Error("No user found", { email });
+      throw new Error("No user found", { email, status: "rejected" });
     }
 
     // Find the corresponding project by title & authorId
-    const project = await prisma.project.findFirst({
-      where: {
-        title: projectTitle,
-        authorId: user.id,
-      },
-    });
+    // const project = await prisma.project.findFirst({
+    //   where: {
+    //     title: {
+    //       contains: projectTitle,
+    //       mode: "insensitive",
+    //     },
+    //     authorId: user.id,
+    //   },
+    // });
+    const normalizedTitle = normalize(projectTitle);
+    const projects = await prisma.$queryRaw`
+      SELECT *
+      FROM "Project"
+      WHERE "authorId" = ${user.id}
+      AND LOWER(REGEXP_REPLACE("title", '["''_\\-\\s]', '', 'g')) = ${normalizedTitle}
+      LIMIT 1;
+    `;
 
-    if (!project) {
+    if (projects.length == 0) {
       console.warn(
-        `No project found with title: ${projectTitle} for user: ${email}`
+        `No project id found with title: ${projectTitle} for user: ${email} with id ${user.id}`
       );
-      throw new Error("No project found", { projectTitle, email });
+      throw new Error("No project found", {
+        projectTitle,
+        email,
+        status: "rejected",
+      });
     }
+    const project = projects[0]
 
     // Create the image and connect it to the project
     const image = await prisma.image.create({
@@ -58,7 +85,7 @@ async function createConnectedImage({ projectTitle, email, url, tags }) {
           connect: { id: project.id },
         },
         aiTags: tags,
-        credit: project.imageCredit,
+        credit: project.imageCredit ?? null,
       },
     });
     return image;
@@ -75,13 +102,13 @@ const extractProjectInfo = async (competitionImages) => {
     const projectTitleRaw = parts[1] || "";
     const emailRaw = parts[2] || "";
 
-    const projectTitle = projectTitleRaw.replace(/_/g, " ");
-    const email = emailRaw.replace(/--at--/g, "@");
+    const projectTitle = decodeURI(projectTitleRaw);
+    let email = emailRaw.replace(/--at--/g, "@");
     // first few image uploads did not replace @ with --at--
-    if (!email.includes("@")) email.replace("_", "@");
+    if (!email.includes("@")) email = email.replace("_", "@");
 
     return {
-      projectTitle,
+      projectTitle: normalize(projectTitle),
       email,
       url: file.url,
       tags: [
@@ -113,10 +140,90 @@ async function fetchFileMetadata(skip, limit) {
   }
 }
 
+async function fetchImageByNamePart(fileNamePart) {
+  const files = await imagekit.listFiles({
+    searchQuery: `name LIKE "${fileNamePart}%"`, // matches any file that starts with fileNamePart
+    limit: 1,
+  });
+
+  if (files.length > 0) {
+    return files[0]; // returns metadata (url, tags, etc.)
+  } else {
+    console.warn(`No file found matching: ${fileNamePart}`);
+    return null;
+  }
+}
+
+const importMissingImages = async () => {
+  const projectsWithoutImages = await prisma.project.findMany({
+    where: {
+      images: {
+        none: {}
+      }
+    },
+    include: {
+      images: true
+    }
+  });
+
+  console.log(`Found ${projectsWithoutImages.length} projects with no images`)
+  const specialCaseMap = {
+    "Les promenades d'Icare": "les promenades",
+    "Chalet Dahu - Low-impact hempcrete self-build": "chalet",
+  }
+  let images = []
+  let errors = []
+  for (const project of projectsWithoutImages) {
+    let searchTerm
+    if (project.title in specialCaseMap) {
+      searchTerm = specialCaseMap[project.title]
+    } else {
+      const title = project.title
+      const normalizedTitle = normalize(title)
+      searchTerm = normalizedTitle
+    }
+    try {
+      const files = await imagekit.listFiles({
+        searchQuery: `name HAS "${searchTerm}"`,
+        limit: 100,
+        skip: 0
+      })
+      for (const file of files) {
+        const existingImage = await prisma.image.findFirst({
+          where: { url: file.url },
+        });
+        if (existingImage) {
+          continue;
+        }
+        const tags = [
+          ...(file.tags ?? []),
+          ...(file.AITags ? file.AITags.map((t) => t.name) : []),
+        ]
+        const image = await prisma.image.create({
+          data: {
+            url: file.url,
+            project: {
+              connect: { id: project.id },
+            },
+            aiTags: tags,
+            credit: project.imageCredit ?? null,
+          },
+        })
+        images.push(image)
+      }
+    } catch (error) {
+      console.error(error)
+      errors.push(error)
+    }
+  }
+  return [images, errors]
+};
+
+
 const main = async (skip = 0, limit = 100) => {
+  const failedImages = [];
   let totalUploaded = 0;
   let totalFailed = 0;
-  const failedImages = [];
 
   while (true) {
     try {
@@ -128,7 +235,6 @@ const main = async (skip = 0, limit = 100) => {
       const newImages = await Promise.allSettled(
         extracted.map(createConnectedImage)
       );
-
       const successes = newImages.filter(
         (result) => result.status === "fulfilled"
       );
@@ -139,15 +245,17 @@ const main = async (skip = 0, limit = 100) => {
       failedImages.push(...errors);
     } catch (err) {
       console.error("Error occurred while processing images:", err);
+      failedImages.push(err);
     }
     skip += limit;
   }
-
+  const [missingImages, _errors] = await importMissingImages()
+  console.log(`Added ${missingImages.length} images from projects with no images`)
   await prisma.$disconnect();
-
   console.log("Total uploaded files: ", totalUploaded);
   console.log("Total failed files: ", totalFailed);
   console.log("Failed images details: ", failedImages);
 };
+
 
 main();

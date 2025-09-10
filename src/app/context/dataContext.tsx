@@ -8,7 +8,7 @@ type DataContext = {
   setFilteredProjects: React.Dispatch<
     React.SetStateAction<Array<FullyEnrichedProject>>
   >;
-  initialProjectsFetch: Promise<Array<FullyEnrichedProject> | Error>;
+  allProjects: Array<FullyEnrichedProject>,
   search: string;
   setSearch: React.Dispatch<React.SetStateAction<string>>;
 };
@@ -16,29 +16,28 @@ type DataContext = {
 const DataContext = createContext<DataContext>({
   filteredProjects: [],
   setFilteredProjects: () => ({}),
-  initialProjectsFetch: Promise.resolve([]),
+  allProjects: [],
   search: "",
   setSearch: () => "",
 });
 
 export function DataProvider({
   children,
-  initialProjectsFetch,
+  initialProjects,
 }: {
   children: React.ReactNode;
-  initialProjectsFetch: Promise<Array<FullyEnrichedProject> | Error>;
+  initialProjects: Array<FullyEnrichedProject>;
 }) {
   const [filteredProjects, setFilteredProjects] = useState<
     Array<FullyEnrichedProject>
   >([]);
   const [search, setSearch] = useState<string>("");
-
   return (
     <DataContext.Provider
       value={{
         filteredProjects,
         setFilteredProjects,
-        initialProjectsFetch,
+        allProjects: initialProjects,
         search,
         setSearch,
       }}

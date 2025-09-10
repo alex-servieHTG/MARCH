@@ -9,53 +9,53 @@ import {
 
 type MaterialInput = z.infer<typeof materialSchema>;
 
-export function parseMaterials(raw: string): MaterialInput[] {
-  const entries = raw
-    .split(/Name Material:/)
-    .map((s) => s.trim())
-    .filter((s) => s.length > 0);
+export function parseMaterial(entry: string): MaterialInput | z.ZodError {
+  const nameMatch = entry.match(/^(.*?),/);
+  const name = nameMatch ? nameMatch[1].trim() : "Unknown Material";
 
-  return entries.map((entry) => {
-    const nameMatch = entry.match(/^(.*?),/);
-    const name = nameMatch ? nameMatch[1].trim() : "Unknown Material";
+  const supplierMatch = entry.match(/Name Supplier:\s*([^,]+),?/);
+  const supplierName = supplierMatch
+    ? supplierMatch[1].trim()
+    : "Unknown Supplier";
 
-    const supplierMatch = entry.match(/Name Supplier:\s*([^,]+),?/);
-    const supplierName = supplierMatch
-      ? supplierMatch[1].trim()
-      : "Unknown Supplier";
+  const usedWhereMatch = entry.match(
+    /Describe where the material is used:\s*([^,]+),?/
+  );
+  const usedWhere = usedWhereMatch ? usedWhereMatch[1].trim() : "Unknown";
 
-    const categoriesMatch = entry.match(
-      /Select all applicable material categories:\s*([^\n,]+(?:[,|\n]\s*[^\n,]+)*)/
-    );
-    const tags = categoriesMatch
-      ? categoriesMatch[1]
-          .split(/[,|\n]/)
-          .map((t) => t.trim())
-          .filter(Boolean)
-      : [];
+  const categoriesMatch = entry.match(
+    /Select all applicable material categories:\s*([^\n,]+(?:[,|\n]\s*[^\n,]+)*)Describe/
+  );
+  const tags = categoriesMatch
+    ? categoriesMatch[1]
+      .split(/[,|\n]/)
+      .map((t) => t.trim())
+      .filter(Boolean)
+    : [];
 
-    const usedWhereMatch = entry.match(
-      /Describe where the material is used:\s*([^,]+),?/
-    );
-    const usedWhere = usedWhereMatch ? usedWhereMatch[1].trim() : "Unknown";
+  const percentageMatch = entry.match(
+    /Estimate what % of the project is built with this material:\s*(\d+)%?/
+  );
+  const percentage = percentageMatch
+    ? parseInt(percentageMatch[1], 10)
+    : undefined;
 
-    const percentageMatch = entry.match(
-      /Estimate what % of the project is built with this material:\s*(\d+)%?/
-    );
-    const percentage = percentageMatch
-      ? parseInt(percentageMatch[1], 10)
-      : undefined;
+  let supplierUrlMatch = entry.match(/URL:\s*([^,]+),?/);
+  let url = supplierUrlMatch ? supplierUrlMatch[1].trim() : null;
+  // sometimes the data don't have "URL" in the data; the URL just comes directly after the percentage
+  if (url === null) {
+    supplierUrlMatch = entry.match(/https?:\/\/\S+$/);
+    url = supplierUrlMatch ? supplierUrlMatch[0].trim() : null;
+  }
 
-    const supplierUrl = entry.match(/URL:\s*([^,]+),?/);
-    const url = supplierUrl ? supplierUrl[1].trim() : null;
-    console.log("supplier URL : ", url);
-
-    return {
+  try {
+    return materialSchema.parse({
       materialName: name,
       usedWhere,
       percentage,
       tags,
       supplierName,
+      url,
       supplierContact: {
         url,
         email: null,
@@ -63,8 +63,21 @@ export function parseMaterials(raw: string): MaterialInput[] {
         locations: [],
       },
       certifications: [],
-    };
-  });
+    });
+  } catch (error) {
+    if (error instanceof z.ZodError) {
+      return error
+    }
+  }
+}
+
+export function parseMaterials(raw: string): MaterialInput[] {
+  const entries = raw
+    .split(/Name Material:/)
+    .map((s) => s.trim())
+    .filter((s) => s.length > 0);
+
+  return entries.map(parseMaterial).filter((m): m is MaterialInput => !(m instanceof z.ZodError))
 }
 
 const constructionMap: Record<string, CONSTRUCTION_TYPOLOGY> = {
@@ -76,7 +89,7 @@ const constructionMap: Record<string, CONSTRUCTION_TYPOLOGY> = {
 };
 
 export const parseConstruction = (raw: string): CONSTRUCTION_TYPOLOGY[] => {
-  console.log("parsing Construction", raw);
+  // console.log("parsing Construction", raw);
   return raw
     .split("\n")
     .map((v) => v.trim())

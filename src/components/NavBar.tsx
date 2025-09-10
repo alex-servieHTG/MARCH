@@ -8,11 +8,11 @@ export default function NavBar() {
   return (
     <div className="w-full flex justify-start">
       <Link href={"/"}>
-        <div className={`m-8 ${pathname === "/" ? "font-bold" : ""}`}>Home</div>
+        <div className={`m-8 ${pathname === "/" ? "font-bold" : ""}`}>MARCH</div>
       </Link>
       <Link href={"/dashboard"}>
         <div className={`m-8 ${pathname === "/dashboard" ? "font-bold" : ""}`}>
-          Dashboard
+          Public Voting
         </div>
       </Link>
     </div>

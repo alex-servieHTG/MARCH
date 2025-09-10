@@ -1,6 +1,6 @@
 "use client";
 
-import { ProjectMaterial, Material, STAKEHOLDER_TYPE } from "@prisma/client";
+import { STAKEHOLDER_TYPE } from "@prisma/client";
 import {
   EnrichedProjectMaterials,
   FullyEnrichedProject,
@@ -28,29 +28,36 @@ export function Sidebar({
   const MaterialDetails = ({
     certifications,
     url,
+    supplierName,
     usedWhere,
-  }: Material & Partial<ProjectMaterial>) => {
+    tags,
+  }: { certifications: string[], url: string | null, supplierName: string | null, usedWhere: string, tags: string[] }) => {
     const certificationTags = certifications.map((c) => <Tag key={c}>{c}</Tag>);
+    const imageTags = tags.join(", ")
     return (
       <>
         <h6 className="text-xs font-semibold mb-1">Where it is used:</h6>
         <p className="mb-2 text-sm font-light">{usedWhere}</p>
-        <a
+        <h6 className="text-xs font-semibold mb-1">Material Categories:</h6>
+        <div className="flex flex-wrap">
+          <p className="mb-2 text-sm font-light">{imageTags}</p>
+        </div>
+        {(url === null ? null : <a
           href={`${url}?utm_source=marchmaterials.com&utm_medium=MARCH_material_search_for_architects`}
           rel="noopener noreferrer"
           target="_blank"
         >
-          Go to supplier
-        </a>
+          {supplierName}
+        </a>)}
         {certificationTags}
       </>
     );
   };
   const materialList = materials.map((m) => ({
     key: m.material.id,
-    label: m.material.name,
+    label: `${m.percentage}% ${m.material.name}`,
     children: (
-      <MaterialDetails {...{ usedWhere: m.usedWhere, ...m.material }} />
+      <MaterialDetails {...{ usedWhere: m.usedWhere, supplierName: m.material.supplier.name, ...m.material }} />
     ),
   }));
   const stakeholderList = project.stakeholders

@@ -20,7 +20,7 @@ export const materialSchema = z
 
     percentage: z.int().min(1).max(100).optional(),
 
-    url: z.url("Must be a valid URL").optional(),
+    url: z.url("Must be a valid URL").optional().nullish(),
 
     tags: z.array(z.string()),
 
