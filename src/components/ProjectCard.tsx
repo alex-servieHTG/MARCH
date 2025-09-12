@@ -4,6 +4,7 @@ import { useCallback, useState } from "react";
 import { Card } from "antd";
 import Image from "next/image";
 import Lightbox from "./Lightbox";
+import VoteButton from "./VoteButton";
 
 export default function ProjectCard({
   project,
@@ -17,12 +18,13 @@ export default function ProjectCard({
   const titleImage = project.images.find((i) =>
     i.aiTags.includes("title-image")
   );
+
   return (
     <>
       <Card
         key={project.id}
         data-testid={project.id}
-        className="w-[400px] max-h-fit cursor-pointer"
+        className="w-[350px] sm:w-[400px] max-h-fit cursor-pointer !mb-2"
         title={project.title}
         onClick={() => setLightboxOpen(true)}
         hoverable
@@ -36,13 +38,16 @@ export default function ProjectCard({
               height={300}
               layout="responsive"
               loading="lazy"
-              className="w-100"
+              className="!rounded-none"
               onLoad={() => setLoading(false)}
             />
           )
         }
       >
-        <div className="text-sm text-gray-700">Votes: {voteCount}</div>
+        <div className="flex flex-row justify-between items-center">
+          <div className="text-sm text-gray-700">Votes: {voteCount}</div>
+          <VoteButton projectId={project.id} setVotes={setVoteCount} antdAdjustment={false}></VoteButton>
+        </div>
       </Card>
       <Lightbox
         images={project.images.map((img) => img.url)}
@@ -56,4 +61,5 @@ export default function ProjectCard({
       />
     </>
   );
+
 }

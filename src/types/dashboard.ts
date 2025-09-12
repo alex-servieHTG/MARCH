@@ -4,6 +4,7 @@ import {
   ProjectMaterial,
   Project,
   Stakeholder,
+  Supplier,
 } from "@prisma/client";
 import { ImageLoaderProps } from "next/image";
 
@@ -15,8 +16,10 @@ export interface extendedImageLoaderProps extends ImageLoaderProps {
   height?: number;
 }
 
+export type EnrichedMaterial = Material & { supplier: Supplier };
+
 export type EnrichedProjectMaterials = Array<
-  ProjectMaterial & { material: Material }
+  ProjectMaterial & { material: EnrichedMaterial }
 >;
 
 export type ProjectMaterials = {

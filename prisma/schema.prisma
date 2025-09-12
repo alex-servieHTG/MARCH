@@ -26,15 +26,36 @@ model Project {
   area                   Int
   construction           CONSTRUCTION_TYPOLOGY[]
   votes                  Int                     @default(0)
+  projectVotes           Vote[]
   imageCredit            String?
-  photographerUrl        String?
 }
 
 model User {
   id        String    @id @default(cuid())
   email     String    @unique
   voteCount Int       @default(0)
-  projects  Project[]
+  lastVote  DateTime?
+  votes     Vote[]   
+  projects Project[]
+}
+
+
+model Vote {
+  id        String   @id @default(cuid())
+  userId    String
+  projectId String
+
+  /// The *day* the vote is counted for (no time component)
+  voteOn    DateTime
+
+  createdAt DateTime @default(now())
+
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  project   Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, voteOn]) // one vote per user per day
+  @@index([projectId, voteOn])
+  @@index([userId, voteOn])
 }
 
 model Image {
@@ -115,4 +136,5 @@ enum STAKEHOLDER_TYPE {
   INTERIOR_ARCHITECT
   CONTRACTOR
   ENGINEER
+  PHOTOGRAPHER
 }
