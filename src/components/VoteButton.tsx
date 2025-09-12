@@ -1,19 +1,22 @@
 "use client";
 
 import { useState } from "react";
-import { Button, Modal, Input, message } from "antd";
+import { Modal, Input, message } from "antd";
 import { z } from "zod";
 import { castVote } from "@/app/actions/vote";
+import { useDataContext } from "@/app/context/dataContext";
 
 type Props = {
   projectId: string;
   setVotes: (votes: number) => void;
+  antdAdjustment: boolean;
 };
 
-export default function VoteButton({ projectId, setVotes }: Props) {
+export default function VoteButton({ projectId, setVotes, antdAdjustment }: Props) {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const [email, setEmail] = useState<string>("");
   const [loading, setLoading] = useState<boolean>(false);
+  const { setAllProjects } = useDataContext();
 
   const handleSubmit = async () => {
     const emailSchema = z.email("Invalid email address");
@@ -22,13 +25,17 @@ export default function VoteButton({ projectId, setVotes }: Props) {
       message.error(parseResult.error.issues[0].message);
       return;
     }
-
     setLoading(true);
 
     try {
-      const { projectVotes } = await castVote(projectId, email);
-      setVotes(projectVotes);
-      message.success("Thanks for voting!");
+      const res = await castVote(projectId, email);
+      if (res.type == "success") {
+        setVotes(res.projectVotes);
+        setAllProjects(allProjects => allProjects.map(p => p.id === projectId ? { ...p, votes: res.projectVotes } : p))
+        message.success("Thanks for voting!");
+      } else {
+        message.info(res.message)
+      }
     } catch (err) {
       console.error(err);
       if (err instanceof Error) {
@@ -41,13 +48,13 @@ export default function VoteButton({ projectId, setVotes }: Props) {
     }
   };
 
+  const verticalSpacing = antdAdjustment ? "py-1 pt-2 mb-1" : "py-2"
+
   return (
     <>
-      <div className="flex items-center justify-between">
-        <Button type="primary" onClick={() => setModalOpen(true)}>
-          Vote for this project
-        </Button>
-      </div>
+      <button className={`px-4 border-2 border-black bg-black text-white ${verticalSpacing} hover:opacity-75 hover:border-opacity-75 rounded-md flex items-baseline justify-center`} onClick={() => setModalOpen(true)}>
+        <span className="text-xl font-extrabold leading-none">Vote</span>
+      </button >
       <Modal
         title="Enter your email"
         open={modalOpen}

@@ -1,13 +1,14 @@
-import { PrismaClient } from "@prisma/client";
+import { PrismaClient, Prisma } from "@prisma/client";
 
 export const prismaClientSingleton = () => {
+  const log: Prisma.LogLevel[] = (process.env.NODE_ENV === "production") ? ["query", "info"] : []
   return new PrismaClient({
     datasources: {
       db: {
         url: process.env.DATABASE_URL!,
       },
     },
-    log: ["query", "info"],
+    log,
   });
 };
 

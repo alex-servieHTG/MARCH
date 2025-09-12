@@ -1,24 +1,32 @@
 import {
   BUILDING_TYPOLOGY,
-  Material,
   Image,
   CONSTRUCTION_TYPOLOGY,
   Stakeholder,
   STAKEHOLDER_TYPE,
 } from "@prisma/client";
-import { FullyEnrichedProject, ProjectMaterials } from "@/types/dashboard";
+import { EnrichedMaterial, FullyEnrichedProject, ProjectMaterials } from "@/types/dashboard";
 import * as data from "./testData.json";
 import { randomUUID } from "crypto";
 
-const generateMaterial = (): Material => {
+const generateMaterial = (): EnrichedMaterial => {
   const mat = data[0].materials[0];
+  const supplierId = randomUUID();
   return {
     id: randomUUID(),
     name: mat.materialName,
     description: mat.description,
     url: mat.url,
-    supplierId: randomUUID(),
+    supplierId,
     tags: mat.tags ?? ["title-image"],
+    supplier: {
+      email: [],
+      name: "supplier",
+      id: supplierId,
+      phoneNumber: [],
+      website: null,
+      locations: []
+    },
     certifications: [],
   };
 };
@@ -74,7 +82,6 @@ export const generateProject = (): FullyEnrichedProject => {
     construction: [CONSTRUCTION_TYPOLOGY.NEW],
     votes: 10,
     stakeholders: [generateStakeholder()],
-    photographerUrl: "www.photos.com",
     imageCredit: "Joe Smith",
   };
 };

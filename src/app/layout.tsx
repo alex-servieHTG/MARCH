@@ -5,6 +5,7 @@ import "./globals.css";
 import NavBar from "@/components/NavBar";
 import { AntdRegistry } from "@ant-design/nextjs-registry";
 import { DataProvider } from "./context/dataContext";
+import HotjarAnalytics from "@/components/Hotjar"
 import { getAllProjects } from "@/utils/dashboard";
 
 export const metadata: Metadata = {
@@ -18,12 +19,15 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const initialProjectsFetch = getAllProjects();
+  const initialProjects = await getAllProjects();
+  if (initialProjects instanceof Error) {
+    throw initialProjects
+  }
   return (
     <html lang="en">
       <body className="antialiased">
@@ -31,11 +35,12 @@ export default function RootLayout({
           <nav>
             <NavBar />
           </nav>
-          <DataProvider initialProjectsFetch={initialProjectsFetch}>
+          <DataProvider initialProjects={initialProjects}>
             {children}
           </DataProvider>
           <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS_ID || ""} />
           <Analytics />
+          <HotjarAnalytics />
         </AntdRegistry>
       </body>
     </html>
